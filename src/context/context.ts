@@ -14,6 +14,6 @@ export const INITIAL_CONTEXT: GameContext = {
   username: "Joueur 1",
 }
 
-export const INITIAL__STATE: GameState = {
+export const INITIAL_STATE: GameState = {
   context: INITIAL_CONTEXT,
 }
