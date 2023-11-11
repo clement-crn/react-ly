@@ -4,6 +4,8 @@ import { createContext, useContext } from "react"
 export type MainState = {
   theme: string
   username: string
+  isGameStarted: boolean
+  setIsGameStarted: React.Dispatch<React.SetStateAction<boolean>>
   setUsername: React.Dispatch<React.SetStateAction<string>>
   setTheme: React.Dispatch<React.SetStateAction<string>>
 }

@@ -8,10 +8,12 @@ interface MainProviderProps {
 const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<string>("light")
   const [username, setUsername] = useState<string>("Joueur 1")
-
+  const [isGameStarted, setIsGameStarted] = useState<boolean>(false)
   const contextValue: MainState = {
     theme,
     username,
+    isGameStarted,
+    setIsGameStarted,
     setTheme,
     setUsername,
   }
