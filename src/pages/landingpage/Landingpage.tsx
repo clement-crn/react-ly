@@ -1,6 +1,6 @@
 import { useState } from "react"
 import style from "./landingpage.module.css"
-import { useMainContext } from "@/context/context"
+import { useMainContext } from "../../context/context"
 
 function Landingpage() {
   const [inputValue, setInputValue] = useState("")
