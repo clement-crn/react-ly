@@ -2,6 +2,7 @@ import React from "react"
 import style from "./game.module.css"
 import { useMainContext } from "../../context/context"
 import RightMenu from "@/components/right_menu/RightMenu"
+import { Board } from "@/components/board"
 
 function Game() {
   const { setIsGameStarted } = useMainContext()
@@ -18,6 +19,9 @@ function Game() {
         </button>
         <div className={style.rightmenu_wrapper}>
           <RightMenu />
+        </div>
+        <div className={style.board_wrapper}>
+          <Board />
         </div>
       </div>
     </>
