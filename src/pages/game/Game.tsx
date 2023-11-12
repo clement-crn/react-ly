@@ -16,8 +16,9 @@ function Game() {
         <button className={style.back_to_landingpage} onClick={back}>
           retour
         </button>
-
-        <RightMenu />
+        <div className={style.rightmenu_wrapper}>
+          <RightMenu />
+        </div>
       </div>
     </>
   )
