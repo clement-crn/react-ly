@@ -19,7 +19,7 @@ function Landingpage() {
     })
   }
   return (
-    <div className={style.landingpage_container_container}>
+    <div className={style.landingpage_container}>
       <h2>Veuillez entrer votre nom:</h2>
       <div className={style.landingpage_container_input_wrapper}>
         <input type="text" value={inputValue} onChange={handleInputChange} />
