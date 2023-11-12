@@ -1,4 +1,3 @@
-// context.tsx
 import { createContext, useContext } from "react"
 
 export type MainState = {
