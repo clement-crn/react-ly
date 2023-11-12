@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { SetStateAction, startTransition, useState } from "react"
 import style from "./landingpage.module.css"
 import { useMainContext } from "../../context/context"
 
@@ -6,13 +6,17 @@ function Landingpage() {
   const [inputValue, setInputValue] = useState("")
   const { setUsername, setIsGameStarted } = useMainContext()
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: {
+    target: { value: SetStateAction<string> }
+  }) => {
     setInputValue(e.target.value)
   }
 
   const handleValidation = () => {
-    setUsername(inputValue)
-    setIsGameStarted(true)
+    startTransition(() => {
+      setUsername(inputValue)
+      setIsGameStarted(true)
+    })
   }
   return (
     <div className={style.landingpage_container_container}>
