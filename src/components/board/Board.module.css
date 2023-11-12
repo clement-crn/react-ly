@@ -1,6 +1,9 @@
 .board_container {
   background-color: rgb(117, 117, 235);
-  height: 60%;
+  height: 85%;
   width: 90%;
-  margin: 0px;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
