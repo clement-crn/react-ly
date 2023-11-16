@@ -6,7 +6,7 @@ export const cornerZone: CornerZone[] = [
     name: "Départ",
     coordinates: {
       top: "86.5%",
-      left: "79%",
+      left: "121.5%",
       width: "18.5%",
       height: "13%",
     },
@@ -16,8 +16,8 @@ export const cornerZone: CornerZone[] = [
     name: "Prison",
     coordinates: {
       top: "86.5%",
-      left: "10.5%",
-      width: "10.5%",
+      left: "0%",
+      width: "18.5%",
       height: "13%",
     },
   },
