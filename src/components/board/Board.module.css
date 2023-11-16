@@ -1,9 +1,29 @@
 .board_container {
-  background-color: rgb(117, 117, 235);
-  height: 85%;
-  width: 90%;
-  margin: 0;
+  position: relative;
+  background-color: rgb(6, 131, 131);
+  width: 50%;
+
+  margin: auto;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.board_image {
+  max-width: 140%;
+}
+
+.clickableZone {
+  position: absolute;
+  cursor: pointer;
+  z-index: 99;
+  background-color: rgba(100, 255, 255, 0.5);
+}
+
+.clickableZone div:hover {
+  background-color: rgb(0, 89, 255);
 }
