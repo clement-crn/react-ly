@@ -25,20 +25,20 @@ export const cornerZone: CornerZone[] = [
     id: 2,
     name: "Parking",
     coordinates: {
-      top: "27%",
-      left: "10%",
-      width: "13%",
-      height: "8%",
+      top: "0%",
+      left: "0%",
+      width: "18.5%",
+      height: "13%",
     },
   },
   {
     id: 3,
     name: "Allez en prison!",
     coordinates: {
-      top: "27%",
-      left: "10%",
-      width: "13%",
-      height: "8%",
+      top: "0%",
+      left: "122%",
+      width: "18.5%",
+      height: "13%",
     },
   },
 ]
