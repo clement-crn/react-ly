@@ -46,41 +46,41 @@ export const cornerZone: CornerZone[] = [
 export const districtZone: DistrictZone[] = [
   {
     id: 0,
-    name: "Départ",
+    name: "Rue ",
     coordinates: {
       top: "86.5%",
-      left: "121.5%",
-      width: "18.5%",
+      left: "110%",
+      width: "12%",
       height: "13%",
     },
   },
   {
     id: 1,
-    name: "Prison",
+    name: "Rue ",
     coordinates: {
       top: "86.5%",
-      left: "0%",
-      width: "18.5%",
+      left: "98.5%",
+      width: "12%",
       height: "13%",
     },
   },
   {
     id: 2,
-    name: "Parking",
+    name: "Rue ",
     coordinates: {
       top: "0%",
       left: "0%",
-      width: "18.5%",
+      width: "12%",
       height: "13%",
     },
   },
   {
     id: 3,
-    name: "Allez en prison!",
+    name: "Rue ",
     coordinates: {
       top: "0%",
       left: "122%",
-      width: "18.5%",
+      width: "12%",
       height: "13%",
     },
   },
