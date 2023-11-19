@@ -3,6 +3,7 @@ import React from "react"
 import style from "./Board.module.css"
 import gameboard from "@/assets"
 import { cornerZone, districtZone } from "./const"
+import { Dice } from "../dice"
 
 function Board() {
   const zoneManager = (id: number) => {
@@ -11,6 +12,7 @@ function Board() {
 
   return (
     <div className={style.board_container}>
+      <Dice />
       <div className={style.imageWrapper}>
         <img src={gameboard} alt="Livingroom" className={style.board_image} />
         {cornerZone.map((zone) => (
