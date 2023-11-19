@@ -1,0 +1,21 @@
+.rightmenu_container {
+  background-color: black;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightmenu_wrapper {
+  background-color: rgb(233, 233, 233);
+  height: 95%;
+  width: 90%;
+}
+.playerInfos {
+  height: 50%;
+  background-color: bisque;
+}
+.empty {
+  height: 50%;
+  background-color: rgb(206, 255, 196);
+}
