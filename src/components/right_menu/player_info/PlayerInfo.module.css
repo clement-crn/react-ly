@@ -1,0 +1,23 @@
+.playerinfo_container {
+  background-color: rgb(255, 255, 255);
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+
+  border-radius: 15px;
+}
+.playerinfo_wrapper {
+  background-color: rgb(243, 243, 243);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.playerinfo_name {
+  font-weight: bold;
+}
+.user_img {
+  width: 70px;
+}
