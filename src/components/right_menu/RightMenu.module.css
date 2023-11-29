@@ -13,10 +13,10 @@
   width: 90%;
 }
 .playerInfos {
-  height: 50%;
+  height: 70%;
   background-color: bisque;
 }
 .empty {
-  height: 50%;
   background-color: rgb(206, 255, 196);
+  height: 30%;
 }
