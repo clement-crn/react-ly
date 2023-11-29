@@ -1,10 +1,8 @@
 .playerinfo_container {
   background-color: rgb(255, 255, 255);
-  width: 90%;
+
   margin: auto;
   padding: 20px;
-
-  border-radius: 15px;
 }
 .playerinfo_wrapper {
   background-color: rgb(243, 243, 243);
