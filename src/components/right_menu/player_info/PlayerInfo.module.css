@@ -1,21 +1,22 @@
 .playerinfo_container {
   background-color: rgb(255, 255, 255);
-
   margin: auto;
   padding: 20px;
 }
 .playerinfo_wrapper {
-  background-color: rgb(243, 243, 243);
+  background-color: rgb(241, 241, 241);
   border-radius: 10px;
   display: flex;
   flex-direction: row;
   gap: 20px;
   align-items: center;
+  height: 8vh;
 }
 
-.playerinfo_name {
-  font-weight: bold;
-}
 .user_img {
   width: 70px;
+}
+
+.playerinfo_bank_money {
+  font-weight: bold;
 }
