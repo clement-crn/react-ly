@@ -27,7 +27,7 @@ function RightMenu() {
               key={index}
               playerName={player.playerName}
               bankMoney={player.bankMoney}
-              playerPicture={player.playerPicture}
+              playerPicture={user_img}
             />
           ))}
         </div>
