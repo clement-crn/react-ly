@@ -14,6 +14,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [bot3Money, setBot3Money] = useState<number>(3000)
   const [bot4Money, setBot4Money] = useState<number>(1200)
   const [dicesDone, setDicesDone] = useState<boolean>(false)
+  const [startingOrder, setStartingOrder] = useState<number[]>([0, 0, 0, 0])
   const contextValue: MainState = {
     theme,
     username,
@@ -23,6 +24,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     bot3Money,
     bot4Money,
     dicesDone,
+    startingOrder,
     setIsGameStarted,
     setTheme,
     setUsername,
@@ -31,6 +33,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     setBot3Money,
     setBot4Money,
     setDicesDone,
+    setStartingOrder,
   }
 
   return (
