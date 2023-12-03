@@ -21,7 +21,7 @@ function Landingpage() {
   }
 
   const openModal = () => {
-    setIsOpen(!isOpen)
+    setIsOpen(true)
   }
 
   return (
