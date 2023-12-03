@@ -10,10 +10,6 @@
   position: fixed;
   right: 50%;
 }
-p {
-  position: fixed;
-  right: 50%;
-}
 
 @keyframes spin {
   0% {

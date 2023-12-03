@@ -1,12 +1,11 @@
 import { SetStateAction, startTransition, useState } from "react"
 import style from "./landingpage.module.css"
 import { useMainContext } from "../../context/context"
-import { Dices } from "../dices"
 
 function Landingpage() {
   const [inputValue, setInputValue] = useState("")
   const { setUsername, setIsGameStarted } = useMainContext()
-  const [isOpen, setIsOpen] = useState(false)
+
   const handleInputChange = (e: {
     target: { value: SetStateAction<string> }
   }) => {
@@ -20,28 +19,15 @@ function Landingpage() {
     })
   }
 
-  const openModal = () => {
-    setIsOpen(true)
-  }
-
   return (
     <>
-      {isOpen ? (
-        <Dices />
-      ) : (
-        <div className={style.landingpage_container}>
-          <h2>Veuillez entrer votre nom:</h2>
-          <div className={style.landingpage_container_input_wrapper}>
-            <input
-              type="text"
-              value={inputValue}
-              onChange={handleInputChange}
-            />
-            <button onClick={handleValidation}>Valider</button>
-            <button onClick={openModal}>dices</button>
-          </div>
+      <div className={style.landingpage_container}>
+        <h2>Veuillez entrer votre nom:</h2>
+        <div className={style.landingpage_container_input_wrapper}>
+          <input type="text" value={inputValue} onChange={handleInputChange} />
+          <button onClick={handleValidation}>Valider</button>
         </div>
-      )}
+      </div>
     </>
   )
 }

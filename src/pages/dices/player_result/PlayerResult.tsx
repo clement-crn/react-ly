@@ -1,26 +1,33 @@
-import React, { useState } from "react"
+import React from "react"
 import { DiceResult } from "./types"
 import style from "./PlayerResult.module.css"
 
 interface PlayerResultProps {
-  playerName: string
+  name: string
   diceResult: DiceResult
-  startingPosition: number
+  startingPosition: 1 | 2 | 3 | 4
 }
 
-const PlayerResult = (
-  playerName,
+const PlayerResult = ({
   diceResult,
-  startingPosition: PlayerResultProps
-) => {
+  name,
+  startingPosition,
+}: PlayerResultProps) => {
+  const resultString = diceResult.join(", ")
+
   return (
     <div>
       <div className={style.container}>
         <div className={style.content}>
-          <p>Modal Content Goes Here</p>
+          <div className={style.content}>
+            <p className={style.diceResult}>{resultString}</p>
+            <p className={style.name}>{name}</p>
+            <p className={style.startingPosition}>{startingPosition}</p>
+          </div>
         </div>
       </div>
     </div>
   )
 }
+
 export default PlayerResult
