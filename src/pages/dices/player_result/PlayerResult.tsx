@@ -20,8 +20,8 @@ const PlayerResult = ({
       <div className={style.container}>
         <div className={style.content}>
           <div className={style.content}>
-            <p className={style.diceResult}>{resultString}</p>
             <p className={style.name}>{name}</p>
+            <p className={style.diceResult}>{resultString}</p>
             <p className={style.startingPosition}>{startingPosition}</p>
           </div>
         </div>
