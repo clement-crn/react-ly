@@ -1,21 +1,59 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import style from "./Dices.module.css"
 import PlayerResult from "./player_result/PlayerResult"
 import { DiceResult } from "./player_result/types"
 import { useMainContext } from "@/context/context"
 const Dices = () => {
-  const { setDicesDone } = useMainContext()
-  /** object temp */
+  const { setDicesStepFinished, setDicesLaunched, dicesLaunched } =
+    useMainContext()
+  const [humanDiceResult, setHumanDiceResult] = useState<DiceResult>([1, 1])
+  const [Bot2DiceResult, setBot2DiceResult] = useState<DiceResult>([1, 1])
+  const [Bot3DiceResult, setBot3DiceResult] = useState<DiceResult>([1, 1])
+  const [Bot4DiceResult, setBot4DiceResult] = useState<DiceResult>([1, 1])
+
+  const launch2Dices = (
+    setDiceResult: React.Dispatch<React.SetStateAction<DiceResult>>
+  ) => {
+    Math.floor(Math.random() * (6 - 1 + 1)) + 1
+    setDiceResult([
+      Math.floor(Math.random() * (6 - 1 + 1)) + 1,
+      Math.floor(Math.random() * (6 - 1 + 1)) + 1,
+    ])
+  }
+  const launchAllDices = () => {
+    launch2Dices(setHumanDiceResult)
+    console.log(humanDiceResult)
+    launch2Dices(setBot2DiceResult)
+
+    launch2Dices(setBot3DiceResult)
+
+    launch2Dices(setBot4DiceResult)
+    setDicesLaunched(true)
+  }
+
+  useEffect(() => {
+    console.log(humanDiceResult)
+    console.log(Bot2DiceResult)
+    console.log(Bot3DiceResult)
+    console.log(Bot4DiceResult)
+  }, [humanDiceResult])
+
+  // const launchDices = () => {
+  //   //genere 4 paires de diceResult
+  //   //additionne les paires puis donne startingPosition
+  // }
+
   const playerResults: {
     diceResult: DiceResult
     name: string
     startingPosition: 1 | 2 | 3 | 4
   }[] = [
-    { diceResult: [4, 2], name: "test", startingPosition: 1 },
-    { diceResult: [4, 3], name: "test", startingPosition: 2 },
-    { diceResult: [4, 2], name: "test", startingPosition: 3 },
-    { diceResult: [4, 2], name: "test", startingPosition: 4 },
+    { diceResult: humanDiceResult, name: "test", startingPosition: 1 },
+    { diceResult: Bot2DiceResult, name: "test", startingPosition: 2 },
+    { diceResult: Bot3DiceResult, name: "test", startingPosition: 3 },
+    { diceResult: Bot4DiceResult, name: "test", startingPosition: 4 },
   ]
+
   return (
     <div>
       <div className={style.dices_container}>
@@ -29,17 +67,17 @@ const Dices = () => {
                   name={result.name}
                   startingPosition={result.startingPosition}
                 />
-                {/* key={index + 1}
-              playerNameProp={player.playerName}
-              playerMoneyProp={[bot2Money, bot3Money, bot4Money][index]}
-              playerPictureProp={user_img} */}
               </div>
             ))}
           </div>
 
           <div className={style.wrapper}>
-            <button onClick={() => setDicesDone(true)}>Lancer les dés</button>
-            <button onClick={() => setDicesDone(true)}>page suiv</button>
+            {!dicesLaunched ? (
+              <button onClick={() => launchAllDices()}>Lancer les dés</button>
+            ) : null}
+            <button onClick={() => setDicesStepFinished(true)}>
+              page suiv
+            </button>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from "react"
 import { DiceResult } from "./types"
 import style from "./PlayerResult.module.css"
+import { useMainContext } from "@/context/context"
 
 interface PlayerResultProps {
   name: string
@@ -13,6 +14,7 @@ const PlayerResult = ({
   name,
   startingPosition,
 }: PlayerResultProps) => {
+  const { dicesLaunched } = useMainContext()
   const resultString = diceResult.join(", ")
 
   return (
@@ -21,7 +23,11 @@ const PlayerResult = ({
         <div className={style.content}>
           <div className={style.content}>
             <p className={style.name}>{name}</p>
-            <p className={style.diceResult}>{resultString}</p>
+            {dicesLaunched ? (
+              <p className={style.diceResult}>{resultString}</p>
+            ) : (
+              <p> . . .</p>
+            )}
             <p className={style.startingPosition}>{startingPosition}</p>
           </div>
         </div>
