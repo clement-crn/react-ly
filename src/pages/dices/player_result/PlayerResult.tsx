@@ -6,7 +6,7 @@ import { useMainContext } from "@/context/context"
 interface PlayerResultProps {
   name: string
   diceResult: DiceResult
-  startingPosition: 1 | 2 | 3 | 4
+  startingPosition: number | undefined
 }
 
 const PlayerResult = ({
@@ -28,7 +28,10 @@ const PlayerResult = ({
             ) : (
               <p> . . .</p>
             )}
-            <p className={style.startingPosition}>{startingPosition}</p>
+
+            {dicesLaunched ? (
+              <p className={style.startingPosition}>{startingPosition}</p>
+            ) : null}
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ export type MainState = {
   bot3Money: number
   bot4Money: number
   dicesStepFinished: boolean
-  startingOrder: string[]
+  startingOrder: number[]
   dicesLaunched: boolean
   setDicesLaunched: React.Dispatch<React.SetStateAction<boolean>>
   setIsGameStarted: React.Dispatch<React.SetStateAction<boolean>>
@@ -20,7 +20,7 @@ export type MainState = {
   setBot3Money: React.Dispatch<React.SetStateAction<number>>
   setBot4Money: React.Dispatch<React.SetStateAction<number>>
   setDicesStepFinished: React.Dispatch<React.SetStateAction<boolean>>
-  setStartingOrder: React.Dispatch<React.SetStateAction<string[]>>
+  setStartingOrder: React.Dispatch<React.SetStateAction<number[]>>
 }
 
 const MainContext = createContext<MainState | undefined>(undefined)

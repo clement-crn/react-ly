@@ -6,13 +6,19 @@ import { Loading } from "./utils"
 import { Dices } from "./pages/dices"
 
 function App() {
-  const { isGameStarted, dicesDone } = useMainContext()
+  const { isGameStarted, dicesStepFinished } = useMainContext()
 
   return (
     <>
       <Suspense fallback={<Loading />}>
         <div>
-          {!isGameStarted ? <Landingpage /> : dicesDone ? <Game /> : <Dices />}
+          {!isGameStarted ? (
+            <Landingpage />
+          ) : dicesStepFinished ? (
+            <Game />
+          ) : (
+            <Dices />
+          )}
         </div>
       </Suspense>
     </>

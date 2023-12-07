@@ -4,12 +4,19 @@ import PlayerResult from "./player_result/PlayerResult"
 import { DiceResult } from "./player_result/types"
 import { useMainContext } from "@/context/context"
 const Dices = () => {
-  const { setDicesStepFinished, setDicesLaunched, dicesLaunched } =
-    useMainContext()
+  const {
+    setDicesStepFinished,
+    setDicesLaunched,
+    setStartingOrder,
+    dicesLaunched,
+    startingOrder,
+    username,
+  } = useMainContext()
   const [humanDiceResult, setHumanDiceResult] = useState<DiceResult>([1, 1])
   const [Bot2DiceResult, setBot2DiceResult] = useState<DiceResult>([1, 1])
   const [Bot3DiceResult, setBot3DiceResult] = useState<DiceResult>([1, 1])
   const [Bot4DiceResult, setBot4DiceResult] = useState<DiceResult>([1, 1])
+  const [ranks] = useState<number[]>([0, 0, 0, 0])
 
   const launch2Dices = (
     setDiceResult: React.Dispatch<React.SetStateAction<DiceResult>>
@@ -24,9 +31,7 @@ const Dices = () => {
     launch2Dices(setHumanDiceResult)
     console.log(humanDiceResult)
     launch2Dices(setBot2DiceResult)
-
     launch2Dices(setBot3DiceResult)
-
     launch2Dices(setBot4DiceResult)
     setDicesLaunched(true)
   }
@@ -36,22 +41,56 @@ const Dices = () => {
     console.log(Bot2DiceResult)
     console.log(Bot3DiceResult)
     console.log(Bot4DiceResult)
+
+    const sumArray = [
+      humanDiceResult[0] + humanDiceResult[1],
+      Bot2DiceResult[0] + Bot2DiceResult[1],
+      Bot3DiceResult[0] + Bot3DiceResult[1],
+      Bot4DiceResult[0] + Bot4DiceResult[1],
+    ]
+    console.log(sumArray)
+
+    const indices = Array.from({ length: sumArray.length }, (_, index) => index)
+    const ranks = indices.map(
+      (index) =>
+        sumArray.filter((val, i) => i !== index && val > sumArray[index]!)
+          .length + 1
+    )
+    /* position de depart de chaque joueur */
+    setStartingOrder(ranks)
+    console.log(ranks)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [humanDiceResult])
 
-  // const launchDices = () => {
-  //   //genere 4 paires de diceResult
-  //   //additionne les paires puis donne startingPosition
-  // }
+  useEffect(() => {
+    console.log("ranks", ranks)
+  }, [ranks])
 
   const playerResults: {
     diceResult: DiceResult
     name: string
-    startingPosition: 1 | 2 | 3 | 4
+    startingPosition: number | undefined
   }[] = [
-    { diceResult: humanDiceResult, name: "test", startingPosition: 1 },
-    { diceResult: Bot2DiceResult, name: "test", startingPosition: 2 },
-    { diceResult: Bot3DiceResult, name: "test", startingPosition: 3 },
-    { diceResult: Bot4DiceResult, name: "test", startingPosition: 4 },
+    {
+      diceResult: humanDiceResult,
+      name: username,
+      startingPosition: startingOrder[0],
+    },
+    {
+      diceResult: Bot2DiceResult,
+      name: "bot 2",
+      startingPosition: startingOrder[1],
+    },
+    {
+      diceResult: Bot3DiceResult,
+      name: "bot 3",
+      startingPosition: startingOrder[2],
+    },
+    {
+      diceResult: Bot4DiceResult,
+      name: "bot ",
+      startingPosition: startingOrder[3],
+    },
   ]
 
   return (
