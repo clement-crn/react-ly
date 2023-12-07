@@ -37,11 +37,6 @@ const Dices = () => {
   }
 
   useEffect(() => {
-    console.log(humanDiceResult)
-    console.log(Bot2DiceResult)
-    console.log(Bot3DiceResult)
-    console.log(Bot4DiceResult)
-
     const sumArray = [
       humanDiceResult[0] + humanDiceResult[1],
       Bot2DiceResult[0] + Bot2DiceResult[1],
@@ -49,7 +44,6 @@ const Dices = () => {
       Bot4DiceResult[0] + Bot4DiceResult[1],
     ]
     console.log(sumArray)
-
     const indices = Array.from({ length: sumArray.length }, (_, index) => index)
     const ranks = indices.map(
       (index) =>
@@ -114,9 +108,9 @@ const Dices = () => {
             {!dicesLaunched ? (
               <button onClick={() => launchAllDices()}>Lancer les dés</button>
             ) : null}
-            <button onClick={() => setDicesStepFinished(true)}>
-              page suiv
-            </button>
+            {dicesLaunched ? (
+              <button onClick={() => setDicesStepFinished(true)}>Jouer</button>
+            ) : null}
           </div>
         </div>
       </div>
