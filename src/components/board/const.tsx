@@ -22,7 +22,7 @@ export const cornerZone: CornerZone[] = [
     },
   },
   {
-    id: 2,
+    id: 20,
     name: "Parking",
     coordinates: {
       top: "0%",
@@ -130,6 +130,186 @@ export const districtZone: DistrictZone[] = [
     coordinates: {
       top: "86.5%",
       left: "18.5%",
+      width: "11.5%",
+      height: "13%",
+    },
+  },
+  {
+    id: 10,
+    name: "Rue ",
+    coordinates: {
+      top: "78.4%",
+      left: "0%",
+      width: "18%",
+      height: "8%",
+    },
+  },
+  {
+    id: 11,
+    name: "Rue ",
+    coordinates: {
+      top: "70%",
+      left: "0%",
+      width: "18%",
+      height: "8%",
+    },
+  },
+  {
+    id: 12,
+    name: "Rue ",
+    coordinates: {
+      top: "62%",
+      left: "0%",
+      width: "18%",
+      height: "8%",
+    },
+  },
+  {
+    id: 13,
+    name: "Rue ",
+    coordinates: {
+      top: "54%",
+      left: "0%",
+      width: "18%",
+      height: "8%",
+    },
+  },
+  {
+    id: 14,
+    name: "Rue ",
+    coordinates: {
+      top: "45.7%",
+      left: "0%",
+      width: "18.1%",
+      height: "8%",
+    },
+  },
+  {
+    id: 15,
+    name: "Rue ",
+    coordinates: {
+      top: "37.5%",
+      left: "0%",
+      width: "18.1%",
+      height: "8%",
+    },
+  },
+  {
+    id: 16,
+    name: "Rue ",
+    coordinates: {
+      top: "29.3%",
+      left: "0%",
+      width: "18.1%",
+      height: "8%",
+    },
+  },
+  {
+    id: 17,
+    name: "Rue ",
+    coordinates: {
+      top: "21.3%",
+      left: "0%",
+      width: "18.1%",
+      height: "8%",
+    },
+  },
+  {
+    id: 18,
+    name: "Rue ",
+    coordinates: {
+      top: "13%",
+      left: "0%",
+      width: "18.1%",
+      height: "8%",
+    },
+  },
+  {
+    id: 21,
+    name: "Rue ",
+    coordinates: {
+      top: "0%",
+      left: "18.5%",
+      width: "11%",
+      height: "13%",
+    },
+  },
+  {
+    id: 22,
+    name: "Rue ",
+    coordinates: {
+      top: "0%",
+      left: "30%",
+      width: "11%",
+      height: "13%",
+    },
+  },
+  {
+    id: 23,
+    name: "Rue ",
+    coordinates: {
+      top: "0%",
+      left: "41.5%",
+      width: "11%",
+      height: "13%",
+    },
+  },
+  {
+    id: 24,
+    name: "Rue ",
+    coordinates: {
+      top: "0%",
+      left: "53%",
+      width: "11%",
+      height: "13%",
+    },
+  },
+  {
+    id: 25,
+    name: "Rue ",
+    coordinates: {
+      top: "0%",
+      left: "64.5%",
+      width: "11%",
+      height: "13%",
+    },
+  },
+  {
+    id: 26,
+    name: "Rue ",
+    coordinates: {
+      top: "0%",
+      left: "76%",
+      width: "11%",
+      height: "13%",
+    },
+  },
+  {
+    id: 27,
+    name: "Rue ",
+    coordinates: {
+      top: "0%",
+      left: "87.5%",
+      width: "11%",
+      height: "13%",
+    },
+  },
+  {
+    id: 28,
+    name: "Rue ",
+    coordinates: {
+      top: "0%",
+      left: "99%",
+      width: "11%",
+      height: "13%",
+    },
+  },
+  {
+    id: 29,
+    name: "Rue ",
+    coordinates: {
+      top: "0%",
+      left: "110%",
       width: "11.5%",
       height: "13%",
     },
