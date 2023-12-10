@@ -12,7 +12,6 @@ const StartingDices = () => {
     setHumanPlayer,
     dicesLaunched,
     startingOrder,
-    username,
     humanPlayer,
   } = useMainContext()
   const [humanDiceResult, setHumanDiceResult] = useState<DiceResult>([1, 1])
@@ -87,7 +86,7 @@ const StartingDices = () => {
   }[] = [
     {
       diceResult: humanDiceResult,
-      name: username,
+      name: humanPlayer.username,
       startingPosition: startingOrder[0],
     },
     {

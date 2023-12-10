@@ -12,14 +12,14 @@ function RightMenu() {
     { playerName: "Player 3", playerPicture: "dog" },
     { playerName: "Player 4", playerPicture: "dog" },
   ]
-  const { playerMoney, bot2Money, bot3Money, bot4Money, username } =
+  const { playerMoney, bot2Money, bot3Money, bot4Money, humanPlayer } =
     useMainContext()
   return (
     <div className={style.rightmenu_container}>
       <div className={style.rightmenu_wrapper}>
         <div className={style.playerInfos}>
           <PlayerInfo
-            playerNameProp={username}
+            playerNameProp={humanPlayer.username}
             playerMoneyProp={playerMoney}
             playerPictureProp={user_img}
           />

@@ -2,7 +2,7 @@ import { createContext, useContext } from "react"
 
 export type MainState = {
   theme: string
-  username: string
+
   isGameStarted: boolean
   playerMoney: number
   bot2Money: number
@@ -14,7 +14,7 @@ export type MainState = {
   humanPlayer: Player
   setDicesLaunched: React.Dispatch<React.SetStateAction<boolean>>
   setIsGameStarted: React.Dispatch<React.SetStateAction<boolean>>
-  setUsername: React.Dispatch<React.SetStateAction<string>>
+
   setTheme: React.Dispatch<React.SetStateAction<string>>
   setPlayerMoney: React.Dispatch<React.SetStateAction<number>>
   setBot2Money: React.Dispatch<React.SetStateAction<number>>
