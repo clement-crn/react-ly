@@ -9,9 +9,11 @@ const StartingDices = () => {
     setDicesStepFinished,
     setDicesLaunched,
     setStartingOrder,
+    setHumanPlayer,
     dicesLaunched,
     startingOrder,
     username,
+    humanPlayer,
   } = useMainContext()
   const [humanDiceResult, setHumanDiceResult] = useState<DiceResult>([1, 1])
   const [Bot2DiceResult, setBot2DiceResult] = useState<DiceResult>([1, 1])
@@ -59,7 +61,24 @@ const StartingDices = () => {
 
   useEffect(() => {
     console.log("ranks", ranks)
+
+    return
   }, [ranks])
+
+  useEffect(() => {
+    console.log(
+      "ancienne position du joueur humain :",
+      humanPlayer.startingPosition
+    )
+    setHumanPlayer({
+      ...humanPlayer,
+      startingPosition: startingOrder[0],
+    })
+  }, [startingOrder])
+
+  useEffect(() => {
+    console.log("nouvelle position :", humanPlayer.startingPosition)
+  }, [humanPlayer])
 
   const playerResults: {
     diceResult: DiceResult

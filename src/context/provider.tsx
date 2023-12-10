@@ -16,6 +16,15 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [dicesLaunched, setDicesLaunched] = useState<boolean>(false)
   const [dicesStepFinished, setDicesStepFinished] = useState<boolean>(false)
   const [startingOrder, setStartingOrder] = useState<number[]>([0, 0, 0, 0])
+  const [humanPlayer, setHumanPlayer] = useState<Player>({
+    username: "",
+    isPlaying: false,
+    money: 1000,
+    isPrisoner: false,
+    startingPosition: 1,
+    boardPosition: 0,
+  })
+
   const contextValue: MainState = {
     theme,
     username,
@@ -27,6 +36,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     dicesStepFinished,
     startingOrder,
     dicesLaunched,
+    humanPlayer,
     setIsGameStarted,
     setTheme,
     setUsername,
@@ -37,6 +47,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     setDicesStepFinished,
     setStartingOrder,
     setDicesLaunched,
+    setHumanPlayer,
   }
 
   return (

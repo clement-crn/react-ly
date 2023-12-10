@@ -1,7 +1,11 @@
-// declare global {
-//   type GameContext = {
-//     username: string
-//     playerMoney: number
-//   }
-// }
-// export type module = unknown
+declare global {
+  type Player = {
+    username: string
+    isPlaying: boolean
+    money: number
+    isPrisoner: boolean
+    startingPosition: number | undefined
+    boardPosition: number
+  }
+}
+export type module = unknown
