@@ -32,7 +32,7 @@ export const cornerZone: CornerZone[] = [
     },
   },
   {
-    id: 3,
+    id: 30,
     name: "Allez en prison!",
     coordinates: {
       top: "0%",
@@ -134,21 +134,12 @@ export const districtZone: DistrictZone[] = [
       height: "13%",
     },
   },
-  {
-    id: 10,
-    name: "Rue ",
-    coordinates: {
-      top: "78.4%",
-      left: "0%",
-      width: "18%",
-      height: "8%",
-    },
-  },
+
   {
     id: 11,
     name: "Rue ",
     coordinates: {
-      top: "70%",
+      top: "78%",
       left: "0%",
       width: "18%",
       height: "8%",
@@ -158,7 +149,7 @@ export const districtZone: DistrictZone[] = [
     id: 12,
     name: "Rue ",
     coordinates: {
-      top: "62%",
+      top: "70%",
       left: "0%",
       width: "18%",
       height: "8%",
@@ -168,7 +159,7 @@ export const districtZone: DistrictZone[] = [
     id: 13,
     name: "Rue ",
     coordinates: {
-      top: "54%",
+      top: "62%",
       left: "0%",
       width: "18%",
       height: "8%",
@@ -178,7 +169,7 @@ export const districtZone: DistrictZone[] = [
     id: 14,
     name: "Rue ",
     coordinates: {
-      top: "45.7%",
+      top: "54%",
       left: "0%",
       width: "18.1%",
       height: "8%",
@@ -188,7 +179,7 @@ export const districtZone: DistrictZone[] = [
     id: 15,
     name: "Rue ",
     coordinates: {
-      top: "37.5%",
+      top: "45.5%",
       left: "0%",
       width: "18.1%",
       height: "8%",
@@ -198,7 +189,7 @@ export const districtZone: DistrictZone[] = [
     id: 16,
     name: "Rue ",
     coordinates: {
-      top: "29.3%",
+      top: "37.5%",
       left: "0%",
       width: "18.1%",
       height: "8%",
@@ -208,7 +199,7 @@ export const districtZone: DistrictZone[] = [
     id: 17,
     name: "Rue ",
     coordinates: {
-      top: "21.3%",
+      top: "29.4%",
       left: "0%",
       width: "18.1%",
       height: "8%",
@@ -216,6 +207,16 @@ export const districtZone: DistrictZone[] = [
   },
   {
     id: 18,
+    name: "Rue ",
+    coordinates: {
+      top: "21%",
+      left: "0%",
+      width: "18.1%",
+      height: "8%",
+    },
+  },
+  {
+    id: 19,
     name: "Rue ",
     coordinates: {
       top: "13%",
@@ -312,6 +313,96 @@ export const districtZone: DistrictZone[] = [
       left: "110%",
       width: "11.5%",
       height: "13%",
+    },
+  },
+  {
+    id: 31,
+    name: "Rue ",
+    coordinates: {
+      top: "13%",
+      left: "122%",
+      width: "18.1%",
+      height: "8%",
+    },
+  },
+  {
+    id: 32,
+    name: "Rue ",
+    coordinates: {
+      top: "21.3%",
+      left: "122%",
+      width: "18.1%",
+      height: "8%",
+    },
+  },
+  {
+    id: 33,
+    name: "Rue ",
+    coordinates: {
+      top: "29.3%",
+      left: "122%",
+      width: "18.1%",
+      height: "8%",
+    },
+  },
+  {
+    id: 34,
+    name: "Rue ",
+    coordinates: {
+      top: "37.5%",
+      left: "122%",
+      width: "18.1%",
+      height: "8%",
+    },
+  },
+  {
+    id: 35,
+    name: "Rue ",
+    coordinates: {
+      top: "45.7%",
+      left: "122%",
+      width: "18.1%",
+      height: "8%",
+    },
+  },
+  {
+    id: 36,
+    name: "Rue ",
+    coordinates: {
+      top: "54%",
+      left: "122%",
+      width: "18%",
+      height: "8%",
+    },
+  },
+  {
+    id: 37,
+    name: "Rue ",
+    coordinates: {
+      top: "62%",
+      left: "122%",
+      width: "18%",
+      height: "8%",
+    },
+  },
+  {
+    id: 38,
+    name: "Rue ",
+    coordinates: {
+      top: "70%",
+      left: "122%",
+      width: "18%",
+      height: "8%",
+    },
+  },
+  {
+    id: 39,
+    name: "Rue ",
+    coordinates: {
+      top: "78%",
+      left: "122%",
+      width: "18%",
+      height: "8%",
     },
   },
 ]
