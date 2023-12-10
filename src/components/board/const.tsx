@@ -12,7 +12,7 @@ export const cornerZone: CornerZone[] = [
     },
   },
   {
-    id: 1,
+    id: 10,
     name: "Prison",
     coordinates: {
       top: "86.5%",
@@ -45,7 +45,7 @@ export const cornerZone: CornerZone[] = [
 
 export const districtZone: DistrictZone[] = [
   {
-    id: 0,
+    id: 1,
     name: "Rue ",
     coordinates: {
       top: "86.5%",
@@ -55,7 +55,7 @@ export const districtZone: DistrictZone[] = [
     },
   },
   {
-    id: 1,
+    id: 2,
     name: "Rue ",
     coordinates: {
       top: "86.5%",
@@ -65,7 +65,7 @@ export const districtZone: DistrictZone[] = [
     },
   },
   {
-    id: 2,
+    id: 3,
     name: "Rue ",
     coordinates: {
       top: "86.5%",
@@ -75,7 +75,7 @@ export const districtZone: DistrictZone[] = [
     },
   },
   {
-    id: 3,
+    id: 4,
     name: "Rue ",
     coordinates: {
       top: "86.5%",
@@ -85,7 +85,7 @@ export const districtZone: DistrictZone[] = [
     },
   },
   {
-    id: 4,
+    id: 5,
     name: "Rue ",
     coordinates: {
       top: "86.5%",
@@ -95,7 +95,7 @@ export const districtZone: DistrictZone[] = [
     },
   },
   {
-    id: 5,
+    id: 6,
     name: "Rue ",
     coordinates: {
       top: "86.5%",
@@ -105,7 +105,7 @@ export const districtZone: DistrictZone[] = [
     },
   },
   {
-    id: 6,
+    id: 7,
     name: "Rue ",
     coordinates: {
       top: "86.5%",
@@ -115,7 +115,7 @@ export const districtZone: DistrictZone[] = [
     },
   },
   {
-    id: 7,
+    id: 8,
     name: "Rue ",
     coordinates: {
       top: "86.5%",
@@ -125,7 +125,7 @@ export const districtZone: DistrictZone[] = [
     },
   },
   {
-    id: 8,
+    id: 9,
     name: "Rue ",
     coordinates: {
       top: "86.5%",
