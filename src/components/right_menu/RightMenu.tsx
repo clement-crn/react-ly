@@ -12,22 +12,27 @@ function RightMenu() {
     { playerName: "Player 3", playerPicture: "dog" },
     { playerName: "Player 4", playerPicture: "dog" },
   ]
-  const { playerMoney, bot2Money, bot3Money, bot4Money, humanPlayer } =
-    useMainContext()
+  const { humanPlayer, bot2, bot3, bot4 } = useMainContext()
   return (
     <div className={style.rightmenu_container}>
       <div className={style.rightmenu_wrapper}>
         <div className={style.playerInfos}>
           <PlayerInfo
             playerNameProp={humanPlayer.username}
-            playerMoneyProp={playerMoney}
+            playerMoneyProp={humanPlayer.money}
             playerPictureProp={user_img}
           />
           {players.map((player, index) => (
             <PlayerInfo
               key={index + 1}
-              playerNameProp={player.playerName}
-              playerMoneyProp={[bot2Money, bot3Money, bot4Money][index]}
+              playerNameProp={
+                [bot2.username, bot3.username, bot3.username, bot4.username][
+                  index
+                ]
+              }
+              playerMoneyProp={
+                [bot2.money, bot3.money, bot3.money, bot4.money][index]
+              }
               playerPictureProp={user_img}
             />
           ))}

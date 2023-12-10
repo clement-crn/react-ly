@@ -2,27 +2,23 @@ import { createContext, useContext } from "react"
 
 export type MainState = {
   theme: string
-
   isGameStarted: boolean
-  playerMoney: number
-  bot2Money: number
-  bot3Money: number
-  bot4Money: number
   dicesStepFinished: boolean
   startingOrder: number[]
   dicesLaunched: boolean
   humanPlayer: Player
+  bot2: Player
+  bot3: Player
+  bot4: Player
   setDicesLaunched: React.Dispatch<React.SetStateAction<boolean>>
   setIsGameStarted: React.Dispatch<React.SetStateAction<boolean>>
-
   setTheme: React.Dispatch<React.SetStateAction<string>>
-  setPlayerMoney: React.Dispatch<React.SetStateAction<number>>
-  setBot2Money: React.Dispatch<React.SetStateAction<number>>
-  setBot3Money: React.Dispatch<React.SetStateAction<number>>
-  setBot4Money: React.Dispatch<React.SetStateAction<number>>
   setDicesStepFinished: React.Dispatch<React.SetStateAction<boolean>>
   setStartingOrder: React.Dispatch<React.SetStateAction<number[]>>
   setHumanPlayer: React.Dispatch<Player>
+  setBot2: React.Dispatch<Player>
+  setBot3: React.Dispatch<Player>
+  setBot4: React.Dispatch<Player>
 }
 
 const MainContext = createContext<MainState | undefined>(undefined)

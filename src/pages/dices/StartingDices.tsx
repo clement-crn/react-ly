@@ -13,6 +13,9 @@ const StartingDices = () => {
     dicesLaunched,
     startingOrder,
     humanPlayer,
+    bot2,
+    bot3,
+    bot4,
   } = useMainContext()
   const [humanDiceResult, setHumanDiceResult] = useState<DiceResult>([1, 1])
   const [Bot2DiceResult, setBot2DiceResult] = useState<DiceResult>([1, 1])
@@ -91,17 +94,17 @@ const StartingDices = () => {
     },
     {
       diceResult: Bot2DiceResult,
-      name: "bot 2",
+      name: bot2.username,
       startingPosition: startingOrder[1],
     },
     {
       diceResult: Bot3DiceResult,
-      name: "bot 3",
+      name: bot3.username,
       startingPosition: startingOrder[2],
     },
     {
       diceResult: Bot4DiceResult,
-      name: "bot ",
+      name: bot4.username,
       startingPosition: startingOrder[3],
     },
   ]

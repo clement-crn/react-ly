@@ -4,7 +4,7 @@ import style from "./PlayerInfo.module.css"
 import { PlayerPicture } from "../types"
 
 interface PlayerInfoProps {
-  playerNameProp: string
+  playerNameProp: string | undefined
   playerMoneyProp?: number
   playerPictureProp: PlayerPicture
 }

@@ -7,17 +7,37 @@ interface MainProviderProps {
 
 const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<string>("light")
-  const [username, setUsername] = useState<string>("Joueur 1")
   const [isGameStarted, setIsGameStarted] = useState<boolean>(false)
-  const [playerMoney, setPlayerMoney] = useState<number>(700)
-  const [bot2Money, setBot2Money] = useState<number>(2000)
-  const [bot3Money, setBot3Money] = useState<number>(3000)
-  const [bot4Money, setBot4Money] = useState<number>(1200)
   const [dicesLaunched, setDicesLaunched] = useState<boolean>(false)
   const [dicesStepFinished, setDicesStepFinished] = useState<boolean>(false)
   const [startingOrder, setStartingOrder] = useState<number[]>([0, 0, 0, 0])
+
   const [humanPlayer, setHumanPlayer] = useState<Player>({
     username: "",
+    isPlaying: false,
+    money: 1000,
+    isPrisoner: false,
+    startingPosition: 1,
+    boardPosition: 0,
+  })
+  const [bot2, setBot2] = useState<Player>({
+    username: "Bot2",
+    isPlaying: false,
+    money: 1000,
+    isPrisoner: false,
+    startingPosition: 1,
+    boardPosition: 0,
+  })
+  const [bot3, setBot3] = useState<Player>({
+    username: "Bot3",
+    isPlaying: false,
+    money: 1000,
+    isPrisoner: false,
+    startingPosition: 1,
+    boardPosition: 0,
+  })
+  const [bot4, setBot4] = useState<Player>({
+    username: "Bot4",
     isPlaying: false,
     money: 1000,
     isPrisoner: false,
@@ -27,27 +47,23 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
 
   const contextValue: MainState = {
     theme,
-    username,
     isGameStarted,
-    playerMoney,
-    bot2Money,
-    bot3Money,
-    bot4Money,
     dicesStepFinished,
     startingOrder,
     dicesLaunched,
     humanPlayer,
-    setIsGameStarted,
+    bot2,
+    bot3,
+    bot4,
     setTheme,
-    setUsername,
-    setPlayerMoney,
-    setBot2Money,
-    setBot3Money,
-    setBot4Money,
+    setIsGameStarted,
     setDicesStepFinished,
     setStartingOrder,
     setDicesLaunched,
     setHumanPlayer,
+    setBot2,
+    setBot3,
+    setBot4,
   }
 
   return (
