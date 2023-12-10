@@ -3,7 +3,7 @@ import Landingpage from "./pages/landingpage/Landingpage"
 import { Game } from "./pages/game"
 import { Suspense } from "react"
 import { Loading } from "./utils"
-import { Dices } from "./pages/dices"
+import { StartingDices } from "./pages/dices"
 
 function App() {
   const { isGameStarted, dicesStepFinished } = useMainContext()
@@ -17,7 +17,7 @@ function App() {
           ) : dicesStepFinished ? (
             <Game />
           ) : (
-            <Dices />
+            <StartingDices />
           )}
         </div>
       </Suspense>

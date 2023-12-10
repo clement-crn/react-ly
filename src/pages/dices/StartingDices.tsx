@@ -3,7 +3,8 @@ import style from "./Dices.module.css"
 import PlayerResult from "./player_result/PlayerResult"
 import { DiceResult } from "./player_result/types"
 import { useMainContext } from "@/context/context"
-const Dices = () => {
+
+const StartingDices = () => {
   const {
     setDicesStepFinished,
     setDicesLaunched,
@@ -118,4 +119,4 @@ const Dices = () => {
   )
 }
 
-export default Dices
+export default StartingDices

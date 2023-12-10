@@ -1,3 +1,3 @@
 import { lazy } from "react"
-const Dices = lazy(() => import("./Dices"))
-export { Dices }
+const StartingDices = lazy(() => import("./StartingDices"))
+export { StartingDices }
