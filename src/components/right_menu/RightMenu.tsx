@@ -3,6 +3,8 @@ import style from "./RightMenu.module.css"
 import { PlayerInfo } from "./player_info"
 import { PlayerPicture } from "./types"
 import { user_img } from "@/assets"
+import launchDice from "../dice/Dice"
+
 function RightMenu() {
   const players: {
     playerName: string
@@ -37,7 +39,11 @@ function RightMenu() {
             />
           ))}
         </div>
-        <div className={style.empty}></div>
+        <div className={style.buttons}>
+          <button onClick={() => launchDice(humanPlayer)}>
+            lancer le dice
+          </button>
+        </div>
       </div>
     </div>
   )

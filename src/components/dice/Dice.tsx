@@ -1,7 +1,10 @@
-import React from "react"
+const launchDice = async (player: Player) => {
+  const randomNumber = Math.floor(Math.random() * 12) + 1
 
-const Dice = () => {
-  return <div>Dice</div>
+  for (let i = player.boardPosition + 1; i <= randomNumber; i++) {
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    console.log(i)
+  }
 }
 
-export default Dice
+export default launchDice
