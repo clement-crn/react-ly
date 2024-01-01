@@ -30,25 +30,25 @@ function RightMenu() {
     console.log(randomNumber, "randomNumber")
     const current = player.boardPosition
     if (player === humanPlayer) {
-      setHumanPlayer({
-        ...humanPlayer,
+      setHumanPlayer((prev) => ({
+        ...prev,
         boardPosition: randomNumber + current,
-      })
+      }))
     } else if (player === bot2) {
-      setBot2({
-        ...bot2,
+      setBot2((prev) => ({
+        ...prev,
         boardPosition: randomNumber + current,
-      })
+      }))
     } else if (player === bot3) {
-      setBot3({
-        ...bot3,
+      setBot3((prev) => ({
+        ...prev,
         boardPosition: randomNumber + current,
-      })
+      }))
     } else if (player === bot4) {
-      setBot4({
-        ...bot4,
+      setBot4((prev) => ({
+        ...prev,
         boardPosition: randomNumber + current,
-      })
+      }))
     }
     console.log(player.boardPosition)
 
