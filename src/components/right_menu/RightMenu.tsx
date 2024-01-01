@@ -3,7 +3,6 @@ import style from "./RightMenu.module.css"
 import { PlayerInfo } from "./player_info"
 import { PlayerPicture } from "./types"
 import { user_img } from "@/assets"
-import { useEffect, useState } from "react"
 
 function RightMenu() {
   const players: {

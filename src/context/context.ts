@@ -15,10 +15,10 @@ export type MainState = {
   setTheme: React.Dispatch<React.SetStateAction<string>>
   setDicesStepFinished: React.Dispatch<React.SetStateAction<boolean>>
   setStartingOrder: React.Dispatch<React.SetStateAction<number[]>>
-  setHumanPlayer: React.Dispatch<Player>
-  setBot2: React.Dispatch<Player>
-  setBot3: React.Dispatch<Player>
-  setBot4: React.Dispatch<Player>
+  setHumanPlayer: React.Dispatch<React.SetStateAction<Player>>
+  setBot2: React.Dispatch<React.SetStateAction<Player>>
+  setBot3: React.Dispatch<React.SetStateAction<Player>>
+  setBot4: React.Dispatch<React.SetStateAction<Player>>
 }
 
 const MainContext = createContext<MainState | undefined>(undefined)
