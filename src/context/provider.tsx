@@ -12,14 +12,6 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [dicesStepFinished, setDicesStepFinished] = useState<boolean>(false)
   const [startingOrder, setStartingOrder] = useState<number[]>([0, 0, 0, 0])
 
-  const [humanPlayer, setHumanPlayer] = useState<Player>({
-    username: "",
-    isPlaying: false,
-    money: 1000,
-    isPrisoner: false,
-    startingPosition: 1,
-    boardPosition: 0,
-  })
   const [bot2, setBot2] = useState<Player>({
     username: "Bot2",
     isPlaying: false,
@@ -44,9 +36,19 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     startingPosition: 1,
     boardPosition: 0,
   })
+  const [humanPlayer, setHumanPlayer] = useState<Player>({
+    username: "",
+    isPlaying: false,
+    money: 1000,
+    isPrisoner: false,
+    startingPosition: 1,
+    boardPosition: 0,
+  })
+  const [allPlayers] = useState<Player[]>([humanPlayer, bot2, bot3, bot4])
 
   const contextValue: MainState = {
     theme,
+    allPlayers,
     isGameStarted,
     dicesStepFinished,
     startingOrder,
