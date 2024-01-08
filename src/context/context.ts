@@ -5,6 +5,7 @@ export type MainState = {
   isGameStarted: boolean
   dicesStepFinished: boolean
   startingOrder: number[]
+  allPlayers: Player[]
   dicesLaunched: boolean
   humanPlayer: Player
   bot2: Player
