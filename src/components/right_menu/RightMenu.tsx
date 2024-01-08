@@ -18,42 +18,33 @@ function RightMenu() {
     bot2,
     bot3,
     bot4,
-
     setBot2,
     setBot3,
     setBot4,
     setHumanPlayer,
   } = useMainContext()
 
-  const launchDice = async (player: Player) => {
+  const updatePlayerPosition = async (player: Player) => {
     const randomNumber = Math.floor(Math.random() * 12) + 1
-    console.log(randomNumber, "randomNumber")
-    const current = player.boardPosition
-    if (player === humanPlayer) {
-      setHumanPlayer((prev) => ({
-        ...prev,
-        boardPosition: randomNumber + current,
-      }))
-    } else if (player === bot2) {
-      setBot2((prev) => ({
-        ...prev,
-        boardPosition: randomNumber + current,
-      }))
-    } else if (player === bot3) {
-      setBot3((prev) => ({
-        ...prev,
-        boardPosition: randomNumber + current,
-      }))
-    } else if (player === bot4) {
-      setBot4((prev) => ({
-        ...prev,
-        boardPosition: randomNumber + current,
-      }))
-    }
-    console.log(player.boardPosition)
+    const newPosition = (player.boardPosition + randomNumber) % 40 || 40
 
-    //TODO: prendre en compte au dessus 40 -> repartir 0
-    //puis passer au joueur suivant
+    const updateState = (prev: Player) => ({
+      ...prev,
+      boardPosition: newPosition,
+    })
+
+    if (player === humanPlayer) {
+      setHumanPlayer(updateState)
+    } else if (player === bot2) {
+      setBot2(updateState)
+    } else if (player === bot3) {
+      setBot3(updateState)
+    } else if (player === bot4) {
+      setBot4(updateState)
+    }
+
+    console.log(player.boardPosition, "boardPosition")
+    console.log(randomNumber, "randomNumber")
   }
 
   return (
@@ -82,7 +73,7 @@ function RightMenu() {
         </div>
         <div className={style.buttons}>
           {/*  currentlyPlaying is the equivalent of for example humanPlayer or bot2*/}
-          <button onClick={() => launchDice(humanPlayer)}>
+          <button onClick={() => updatePlayerPosition(humanPlayer)}>
             lancer le dice
           </button>
         </div>
