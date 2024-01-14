@@ -11,6 +11,7 @@ export type MainState = {
   bot2: Player
   bot3: Player
   bot4: Player
+  currentPlayerIndex: number
   setDicesLaunched: React.Dispatch<React.SetStateAction<boolean>>
   setIsGameStarted: React.Dispatch<React.SetStateAction<boolean>>
   setTheme: React.Dispatch<React.SetStateAction<string>>
@@ -20,6 +21,7 @@ export type MainState = {
   setBot2: React.Dispatch<React.SetStateAction<Player>>
   setBot3: React.Dispatch<React.SetStateAction<Player>>
   setBot4: React.Dispatch<React.SetStateAction<Player>>
+  setCurrentPlayerIndex: React.Dispatch<React.SetStateAction<number>>
 }
 
 const MainContext = createContext<MainState | undefined>(undefined)

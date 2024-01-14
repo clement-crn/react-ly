@@ -2,36 +2,12 @@
 
 import { useMainContext } from "@/context/context"
 import style from "./RightMenu.module.css"
-
-import {
-  rollDiceForPlayer,
-  simulateBotDiceRolling,
-} from "../dice_controller/DiceController"
 import { PlayerInfo } from "./player_info"
 import { user_img } from "@/assets"
+import MainButtons from "./main_buttons/MainButtons"
 
 function RightMenu() {
-  const {
-    humanPlayer,
-    bot2,
-    bot3,
-    bot4,
-    allPlayers,
-    setBot2,
-    setBot3,
-    setBot4,
-    setHumanPlayer,
-  } = useMainContext()
-
-  const handleHumanPlayerDiceRoll = async () => {
-    await rollDiceForPlayer(humanPlayer, setHumanPlayer)
-  }
-
-  const handleBotDiceRolls = () => {
-    simulateBotDiceRolling(bot2, setBot2)
-    simulateBotDiceRolling(bot3, setBot3)
-    simulateBotDiceRolling(bot4, setBot4)
-  }
+  const { humanPlayer, bot2, bot3, bot4, allPlayers } = useMainContext()
 
   return (
     <div className={style.rightmenu_container}>
@@ -55,12 +31,7 @@ function RightMenu() {
             />
           ))}
         </div>
-        <div className={style.buttons}>
-          <button onClick={handleHumanPlayerDiceRoll}>Lancer le dé</button>
-          <button onClick={handleBotDiceRolls}>
-            Simuler les dés pour les bots
-          </button>
-        </div>
+        <MainButtons />
       </div>
     </div>
   )

@@ -11,6 +11,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [dicesLaunched, setDicesLaunched] = useState<boolean>(false)
   const [dicesStepFinished, setDicesStepFinished] = useState<boolean>(false)
   const [startingOrder, setStartingOrder] = useState<number[]>([0, 0, 0, 0])
+  const [currentPlayerIndex, setCurrentPlayerIndex] = useState<number>(0)
 
   const [bot2, setBot2] = useState<Player>({
     username: "Bot2",
@@ -57,6 +58,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     bot2,
     bot3,
     bot4,
+    currentPlayerIndex,
     setTheme,
     setIsGameStarted,
     setDicesStepFinished,
@@ -66,6 +68,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     setBot2,
     setBot3,
     setBot4,
+    setCurrentPlayerIndex,
   }
 
   return (
