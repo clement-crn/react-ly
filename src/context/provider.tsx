@@ -56,16 +56,16 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   ) => {
     switch (target) {
       case "human":
-        setHumanPlayer(player)
+        setHumanPlayer(structuredClone(player))
         break
       case "bot2":
-        setBot2(player)
+        setBot2(structuredClone(player))
         break
       case "bot3":
-        setBot3(player)
+        setBot3(structuredClone(player))
         break
       case "bot4":
-        setBot4(player)
+        setBot4(structuredClone(player))
         break
       default:
         console.error(`setPlayer - invalid target: ${target}`)
