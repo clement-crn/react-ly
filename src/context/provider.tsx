@@ -52,20 +52,20 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
 
   const setPlayer = (
     target: "human" | "bot2" | "bot3" | "bot4",
-    player: Player | ((prevState: Player) => Player)
+    payload: Partial<Player>
   ) => {
     switch (target) {
       case "human":
-        setHumanPlayer(structuredClone(player))
+        setHumanPlayer((prev) => structuredClone({ ...prev, ...payload }))
         break
       case "bot2":
-        setBot2(structuredClone(player))
+        setBot2((prev) => structuredClone({ ...prev, ...payload }))
         break
       case "bot3":
-        setBot3(structuredClone(player))
+        setBot3((prev) => structuredClone({ ...prev, ...payload }))
         break
       case "bot4":
-        setBot4(structuredClone(player))
+        setBot4((prev) => structuredClone({ ...prev, ...payload }))
         break
       default:
         console.error(`setPlayer - invalid target: ${target}`)
