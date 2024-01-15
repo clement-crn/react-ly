@@ -1,26 +1,19 @@
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+// diceControllerUtils.js
 
-export const rollDiceForPlayer = async (player, setPlayer) => {
-  const randomNumber = Math.floor(Math.random() * 12) + 1
-  const newPosition = (player.boardPosition + randomNumber) % 40 || 40
+import { useMainContext } from "@/context/context"
 
-  const updateState = (prev) => ({
-    ...prev,
-    boardPosition: newPosition,
-  })
+export const useDiceController = () => {
+  const { currentPlayerIndex, allPlayers } = useMainContext()
 
-  setPlayer(updateState)
+  const rollDicesMainGame = () => {
+    const randomNumber = Math.floor(Math.random() * 12) + 1
+    const player = allPlayers?.[currentPlayerIndex]
 
-  console.log(player.boardPosition, "boardPosition")
-  console.log(randomNumber, "randomNumber")
+    console.log(player, "player")
+    console.log(randomNumber, "randomNumber")
 
-  return newPosition
-}
+    // Perform actions related to rolling dices
+  }
 
-export const simulateBotDiceRolling = async (bot, setBot) => {
-  await delay(2000)
-
-  const newPosition = await rollDiceForPlayer(bot, setBot)
-
-  alert(`${bot.username} rolled dice. New position: ${newPosition}`)
+  return { rollDicesMainGame }
 }
