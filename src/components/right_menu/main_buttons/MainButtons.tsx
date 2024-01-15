@@ -4,7 +4,6 @@ import {
 } from "@/components/dice_controller/DiceController"
 import { useMainContext } from "@/context/context"
 import style from "./MainButtons.module.css"
-import React from "react"
 
 function MainButtons() {
   const {
@@ -34,15 +33,13 @@ function MainButtons() {
 
   const endTurn = () => {
     const nextPlayerIndex = (currentPlayerIndex + 1) % startingOrder.length
-
-    // Update the state to move to the next player
     setCurrentPlayerIndex(nextPlayerIndex)
   }
 
   return (
     <div className={style.buttons_container}>
       <button onClick={handleHumanPlayerDiceRoll}>Lancer le dé</button>
-      <button onClick={endTurn}>joueur suivant</button>
+      <button onClick={() => endTurn()}>joueur suivant</button>
       <button onClick={handleBotDiceRolls}>
         Simuler les dés pour les bots /!\s
       </button>

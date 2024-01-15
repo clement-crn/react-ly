@@ -26,7 +26,6 @@ export type MainState = {
 
 const MainContext = createContext<MainState | undefined>(undefined)
 
-//hook personalise
 const useMainContext = () => {
   const context = useContext(MainContext)
   if (!context) {

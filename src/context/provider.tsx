@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from "react"
+import React, { useState, ReactNode, useEffect } from "react"
 import { MainContext, MainState } from "./context"
 
 interface MainProviderProps {
@@ -45,7 +45,18 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     startingPosition: 1,
     boardPosition: 0,
   })
-  const [allPlayers] = useState<Player[]>([humanPlayer, bot2, bot3, bot4])
+
+  const [allPlayers, setAllPlayers] = useState<Player[]>([
+    humanPlayer,
+    bot2,
+    bot3,
+    bot4,
+  ])
+
+  // Update allPlayers whenever a Player object changes
+  useEffect(() => {
+    setAllPlayers([humanPlayer, bot2, bot3, bot4])
+  }, [humanPlayer, bot2, bot3, bot4])
 
   const contextValue: MainState = {
     theme,
