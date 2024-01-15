@@ -47,13 +47,30 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   })
 
   const allPlayers = useMemo(() => {
-    return structuredClone([
-      humanPlayer,
-      bot2,
-      bot3,
-      bot4,
-    ])
+    return structuredClone([humanPlayer, bot2, bot3, bot4])
   }, [humanPlayer, bot2, bot3, bot4])
+
+  const setPlayer = (
+    target: "human" | "bot2" | "bot3" | "bot4",
+    player: Player | ((prevState: Player) => Player)
+  ) => {
+    switch (target) {
+      case "human":
+        setHumanPlayer(player)
+        break
+      case "bot2":
+        setBot2(player)
+        break
+      case "bot3":
+        setBot3(player)
+        break
+      case "bot4":
+        setBot4(player)
+        break
+      default:
+        console.error(`setPlayer - invalid target: ${target}`)
+    }
+  }
 
   const contextValue: MainState = {
     theme,
@@ -72,10 +89,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     setDicesStepFinished,
     setStartingOrder,
     setDicesLaunched,
-    setHumanPlayer,
-    setBot2,
-    setBot3,
-    setBot4,
+    setPlayer,
     setCurrentPlayerIndex,
   }
 

@@ -9,7 +9,7 @@ const StartingDices = () => {
     setDicesStepFinished,
     setDicesLaunched,
     setStartingOrder,
-    setHumanPlayer,
+    setPlayer,
     dicesLaunched,
     startingOrder,
     humanPlayer,
@@ -72,7 +72,7 @@ const StartingDices = () => {
       "ancienne position du joueur humain :",
       humanPlayer.startingPosition
     )
-    setHumanPlayer((prev) => ({
+    setPlayer("human", (prev) => ({
       ...prev,
       startingPosition: startingOrder[0],
     }))

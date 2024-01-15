@@ -4,7 +4,7 @@ import { useMainContext } from "../../context/context"
 
 function Landingpage() {
   const [inputValue, setInputValue] = useState("")
-  const { humanPlayer, setHumanPlayer, setIsGameStarted } = useMainContext()
+  const { humanPlayer, setPlayer, setIsGameStarted } = useMainContext()
 
   const handleInputChange = (e: {
     target: { value: SetStateAction<string> }
@@ -14,7 +14,7 @@ function Landingpage() {
 
   const handleValidation = () => {
     startTransition(() => {
-      setHumanPlayer({
+      setPlayer("human", {
         ...humanPlayer,
         username: inputValue,
       })
