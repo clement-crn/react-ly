@@ -28,11 +28,36 @@ const StartingDices = () => {
   }
 
   const launchDices = () => {
-    setHumanDiceResult([rand(), rand()])
-    setBot2DiceResult([rand(), rand()])
-    setBot3DiceResult([rand(), rand()])
-    setBot4DiceResult([rand(), rand()])
+    let humanResult, bot2Result, bot3Result, bot4Result
+
+    do {
+      humanResult = [rand(), rand()]
+      bot2Result = [rand(), rand()]
+      bot3Result = [rand(), rand()]
+      bot4Result = [rand(), rand()]
+    } while (
+      !(
+        isUniqueResult(humanResult, [bot2Result, bot3Result, bot4Result]) &&
+        isUniqueResult(bot2Result, [humanResult, bot3Result, bot4Result]) &&
+        isUniqueResult(bot3Result, [humanResult, bot2Result, bot4Result]) &&
+        isUniqueResult(bot4Result, [humanResult, bot2Result, bot3Result])
+      )
+    )
+
+    setHumanDiceResult(humanResult)
+    setBot2DiceResult(bot2Result)
+    setBot3DiceResult(bot3Result)
+    setBot4DiceResult(bot4Result)
     setDicesLaunched(true)
+  }
+
+  const isUniqueResult = (
+    currentResult: DiceResult,
+    otherResults: DiceResult[]
+  ) => {
+    const currentSum = currentResult[0] + currentResult[1]
+    const otherSums = otherResults.map((result) => result[0] + result[1])
+    return !otherSums.includes(currentSum)
   }
 
   useEffect(() => {
@@ -56,26 +81,11 @@ const StartingDices = () => {
   }, [humanDiceResult])
 
   useEffect(() => {
-    console.log("ranks", ranks)
-
-    return
-  }, [ranks])
-
-  useEffect(() => {
-    console.log(
-      "ancienne position du joueur humain :",
-      humanPlayer.startingPosition
-    )
-
     setPlayer("human", {
       ...humanPlayer,
       startingPosition: startingOrder[0],
     })
   }, [startingOrder])
-
-  useEffect(() => {
-    console.log("nouvelle position :", humanPlayer.startingPosition)
-  }, [humanPlayer])
 
   const playerResults: {
     diceResult: DiceResult
