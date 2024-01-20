@@ -72,10 +72,11 @@ const StartingDices = () => {
       "ancienne position du joueur humain :",
       humanPlayer.startingPosition
     )
-    setPlayer("human", (prev) => ({
-      ...prev,
+
+    setPlayer("human", {
+      ...humanPlayer,
       startingPosition: startingOrder[0],
-    }))
+    })
   }, [startingOrder])
 
   useEffect(() => {
