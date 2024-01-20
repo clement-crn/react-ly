@@ -23,21 +23,15 @@ const StartingDices = () => {
   const [Bot4DiceResult, setBot4DiceResult] = useState<DiceResult>([1, 1])
   const [ranks] = useState<number[]>([0, 0, 0, 0])
 
-  const launch2Dices = (
-    setDiceResult: React.Dispatch<React.SetStateAction<DiceResult>>
-  ) => {
-    Math.floor(Math.random() * (6 - 1 + 1)) + 1
-    setDiceResult([
-      Math.floor(Math.random() * (6 - 1 + 1)) + 1,
-      Math.floor(Math.random() * (6 - 1 + 1)) + 1,
-    ])
+  const rand = () => {
+    return Math.floor(Math.random() * (6 - 1 + 1)) + 1
   }
-  const launchAllDices = () => {
-    launch2Dices(setHumanDiceResult)
-    console.log(humanDiceResult)
-    launch2Dices(setBot2DiceResult)
-    launch2Dices(setBot3DiceResult)
-    launch2Dices(setBot4DiceResult)
+
+  const launchDices = () => {
+    setHumanDiceResult([rand(), rand()])
+    setBot2DiceResult([rand(), rand()])
+    setBot3DiceResult([rand(), rand()])
+    setBot4DiceResult([rand(), rand()])
     setDicesLaunched(true)
   }
 
@@ -129,7 +123,7 @@ const StartingDices = () => {
 
           <div className={style.wrapper}>
             {!dicesLaunched ? (
-              <button onClick={() => launchAllDices()}>Lancer les dés</button>
+              <button onClick={() => launchDices()}>Lancer les dés</button>
             ) : null}
             {dicesLaunched ? (
               <button onClick={() => setDicesStepFinished(true)}>Jouer</button>
