@@ -1,4 +1,4 @@
-import React, { useState, ReactNode, useEffect } from "react"
+import React, { useState, ReactNode, useMemo } from "react"
 import { MainContext, MainState } from "./context"
 
 interface MainProviderProps {
@@ -46,17 +46,31 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     boardPosition: 0,
   })
 
-  const [allPlayers, setAllPlayers] = useState<Player[]>([
-    humanPlayer,
-    bot2,
-    bot3,
-    bot4,
-  ])
-
-  // Update allPlayers whenever a Player object changes
-  useEffect(() => {
-    setAllPlayers([humanPlayer, bot2, bot3, bot4])
+  const allPlayers = useMemo(() => {
+    return structuredClone([humanPlayer, bot2, bot3, bot4])
   }, [humanPlayer, bot2, bot3, bot4])
+
+  const setPlayer = (
+    target: "human" | "bot2" | "bot3" | "bot4",
+    payload: Partial<Player>
+  ) => {
+    switch (target) {
+      case "human":
+        setHumanPlayer((prev) => structuredClone({ ...prev, ...payload }))
+        break
+      case "bot2":
+        setBot2((prev) => structuredClone({ ...prev, ...payload }))
+        break
+      case "bot3":
+        setBot3((prev) => structuredClone({ ...prev, ...payload }))
+        break
+      case "bot4":
+        setBot4((prev) => structuredClone({ ...prev, ...payload }))
+        break
+      default:
+        console.error(`setPlayer - invalid target: ${target}`)
+    }
+  }
 
   const contextValue: MainState = {
     theme,
@@ -75,10 +89,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     setDicesStepFinished,
     setStartingOrder,
     setDicesLaunched,
-    setHumanPlayer,
-    setBot2,
-    setBot3,
-    setBot4,
+    setPlayer,
     setCurrentPlayerIndex,
   }
 

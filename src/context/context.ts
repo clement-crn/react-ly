@@ -17,10 +17,10 @@ export type MainState = {
   setTheme: React.Dispatch<React.SetStateAction<string>>
   setDicesStepFinished: React.Dispatch<React.SetStateAction<boolean>>
   setStartingOrder: React.Dispatch<React.SetStateAction<number[]>>
-  setHumanPlayer: React.Dispatch<React.SetStateAction<Player>>
-  setBot2: React.Dispatch<React.SetStateAction<Player>>
-  setBot3: React.Dispatch<React.SetStateAction<Player>>
-  setBot4: React.Dispatch<React.SetStateAction<Player>>
+  setPlayer: (
+    target: "human" | "bot2" | "bot3" | "bot4",
+    payload: Partial<Player>
+  ) => void
   setCurrentPlayerIndex: React.Dispatch<React.SetStateAction<number>>
 }
 
