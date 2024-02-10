@@ -1,24 +1,19 @@
-// import React, { useEffect, useState } from "react"
-import { useEffect } from "react"
 import style from "./Dices.module.css"
-// import PlayerResult from "./player_result/PlayerResult"
-// import { DiceResult } from "./player_result/types"
 import { useMainContext } from "@/context/context"
 
+import Result from "./Result"
+const pairs: { a: number; b: number; sum: number }[] = []
 const StartingDices = () => {
   const {
     setDicesStepFinished,
     setDicesLaunched,
-    setStartingOrder,
     setPlayer,
     dicesLaunched,
-    startingOrder,
     humanPlayer,
     bot2,
     bot3,
     bot4,
   } = useMainContext()
-  const pairs: { a: number; b: number; sum: number }[] = []
 
   const launchDices = () => {
     for (let i = 0; i < 4; i++) {
@@ -34,7 +29,6 @@ const StartingDices = () => {
       pairs.push({ a: a, b: b, sum: sum })
     }
 
-    console.log(pairs)
     const rankArray = pairs.map((currentPair) => {
       let rank = 1
       for (const otherPair of pairs) {
@@ -65,7 +59,7 @@ const StartingDices = () => {
 
     setDicesLaunched(true)
   }
-
+  console.log(pairs, "----")
   return (
     <div>
       <div className={style.dices_container}>
@@ -77,7 +71,12 @@ const StartingDices = () => {
               <button onClick={() => launchDices()}>Lancer les dés</button>
             ) : null}
             {dicesLaunched ? (
-              <button onClick={() => setDicesStepFinished(true)}>Jouer</button>
+              <>
+                <Result pairs={pairs} />
+                <button onClick={() => setDicesStepFinished(true)}>
+                  Jouer
+                </button>
+              </>
             ) : null}
           </div>
         </div>

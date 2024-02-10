@@ -24,12 +24,3 @@
   align-items: center;
   justify-content: center;
 }
-.player_result_wrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-.wrapper {
-  display: flex;
-  gap: 20px;
-}
