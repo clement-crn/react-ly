@@ -1,4 +1,5 @@
 // import React, { useEffect, useState } from "react"
+import { useEffect } from "react"
 import style from "./Dices.module.css"
 // import PlayerResult from "./player_result/PlayerResult"
 // import { DiceResult } from "./player_result/types"
@@ -7,20 +8,19 @@ import { useMainContext } from "@/context/context"
 const StartingDices = () => {
   const {
     setDicesStepFinished,
-    // setDicesLaunched,
-    // setStartingOrder,
-    // setPlayer,
+    setDicesLaunched,
+    setStartingOrder,
+    setPlayer,
     dicesLaunched,
-    // startingOrder,
-    // humanPlayer,
-    // bot2,
-    // bot3,
-    // bot4,
+    startingOrder,
+    humanPlayer,
+    bot2,
+    bot3,
+    bot4,
   } = useMainContext()
+  const pairs: { a: number; b: number; sum: number }[] = []
 
   const launchDices = () => {
-    const pairs: { a: number; b: number; sum: number }[] = []
-
     for (let i = 0; i < 4; i++) {
       let a = Math.floor(Math.random() * 6) + 1
       let b = Math.floor(Math.random() * 6) + 1
@@ -35,14 +35,36 @@ const StartingDices = () => {
     }
 
     console.log(pairs)
-  }
+    const rankArray = pairs.map((currentPair) => {
+      let rank = 1
+      for (const otherPair of pairs) {
+        if (otherPair.sum > currentPair.sum) {
+          rank++
+        }
+      }
+      return rank
+    })
+    console.log(rankArray, "Rank array without sorting")
 
-  // useEffect(() => {
-  //   setPlayer("human", {
-  //     ...humanPlayer,
-  //     startingPosition: startingOrder[0],
-  //   })
-  // }, [startingOrder])
+    setPlayer("human", {
+      ...humanPlayer,
+      startingPosition: rankArray[0],
+    })
+    setPlayer("bot2", {
+      ...bot2,
+      startingPosition: rankArray[1],
+    })
+    setPlayer("bot3", {
+      ...bot3,
+      startingPosition: rankArray[2],
+    })
+    setPlayer("bot4", {
+      ...bot4,
+      startingPosition: rankArray[3],
+    })
+
+    setDicesLaunched(true)
+  }
 
   return (
     <div>
