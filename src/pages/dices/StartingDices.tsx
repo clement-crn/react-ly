@@ -72,10 +72,17 @@ const StartingDices = () => {
             ) : null}
             {dicesLaunched ? (
               <>
-                <Result pairs={pairs} />
-                <button onClick={() => setDicesStepFinished(true)}>
-                  Jouer
-                </button>
+                <div className={style.result_and_button}>
+                  <Result pairs={pairs} />
+                  <div className={style.button_wrapper}>
+                    <button
+                      onClick={() => setDicesStepFinished(true)}
+                      className={style.play_button}
+                    >
+                      Jouer
+                    </button>
+                  </div>
+                </div>
               </>
             ) : null}
           </div>

@@ -1,0 +1,16 @@
+.result_container {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+
+.dice_icons_wrapper {
+  border-radius: 1px black solid;
+  background-color: rgb(246, 246, 246);
+  height: 120px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}
