@@ -1,5 +1,6 @@
 declare global {
   type Player = {
+    id: number
     username: string
     isPlaying: boolean
     money: number

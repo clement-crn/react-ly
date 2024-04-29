@@ -1,5 +1,6 @@
 import React, { useState, ReactNode, useMemo } from "react"
 import { MainContext, MainState } from "./context"
+import { DistrictZone } from "@/components/board/types"
 
 interface MainProviderProps {
   children: ReactNode
@@ -12,8 +13,12 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [dicesStepFinished, setDicesStepFinished] = useState<boolean>(false)
   const [startingOrder, setStartingOrder] = useState<number[]>([0, 0, 0, 0])
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState<number>(0)
+  const [listOfOwnedProperties, setListOfOwnedProperties] = useState<
+    DistrictZone[]
+  >([])
 
   const [bot2, setBot2] = useState<Player>({
+    id: 1,
     username: "Bot2",
     isPlaying: false,
     money: 1000,
@@ -22,6 +27,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     boardPosition: 0,
   })
   const [bot3, setBot3] = useState<Player>({
+    id: 2,
     username: "Bot3",
     isPlaying: false,
     money: 1000,
@@ -30,6 +36,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     boardPosition: 0,
   })
   const [bot4, setBot4] = useState<Player>({
+    id: 3,
     username: "Bot4",
     isPlaying: false,
     money: 1000,
@@ -38,6 +45,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     boardPosition: 0,
   })
   const [humanPlayer, setHumanPlayer] = useState<Player>({
+    id: 0,
     username: "",
     isPlaying: false,
     money: 1000,
@@ -84,6 +92,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     bot3,
     bot4,
     currentPlayerIndex,
+    listOfOwnedProperties,
     setTheme,
     setIsGameStarted,
     setDicesStepFinished,
@@ -91,6 +100,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     setDicesLaunched,
     setPlayer,
     setCurrentPlayerIndex,
+    setListOfOwnedProperties,
   }
 
   return (
