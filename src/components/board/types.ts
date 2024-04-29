@@ -12,6 +12,7 @@ export type CornerZone = {
 export type DistrictZone = {
   id: number
   name: string
+  price: number
   coordinates: {
     top: string
     left: string

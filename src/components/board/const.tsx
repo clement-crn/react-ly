@@ -47,6 +47,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 1,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "86.5%",
       left: "110%",
@@ -57,6 +58,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 2,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "86.5%",
       left: "98.5%",
@@ -67,6 +69,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 3,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "86.5%",
       left: "87%",
@@ -77,6 +80,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 4,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "86.5%",
       left: "75.5%",
@@ -87,6 +91,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 5,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "86.5%",
       left: "64.5%",
@@ -97,6 +102,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 6,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "86.5%",
       left: "52.5%",
@@ -107,6 +113,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 7,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "86.5%",
       left: "41.5%",
@@ -117,6 +124,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 8,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "86.5%",
       left: "30%",
@@ -127,6 +135,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 9,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "86.5%",
       left: "18.5%",
@@ -138,6 +147,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 11,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "78%",
       left: "0%",
@@ -148,6 +158,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 12,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "70%",
       left: "0%",
@@ -158,6 +169,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 13,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "62%",
       left: "0%",
@@ -168,6 +180,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 14,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "54%",
       left: "0%",
@@ -178,6 +191,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 15,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "45.5%",
       left: "0%",
@@ -188,6 +202,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 16,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "37.5%",
       left: "0%",
@@ -198,6 +213,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 17,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "29.4%",
       left: "0%",
@@ -208,6 +224,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 18,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "21%",
       left: "0%",
@@ -218,6 +235,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 19,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "13%",
       left: "0%",
@@ -228,6 +246,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 21,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "0%",
       left: "18.5%",
@@ -238,6 +257,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 22,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "0%",
       left: "30%",
@@ -248,6 +268,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 23,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "0%",
       left: "41.5%",
@@ -258,6 +279,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 24,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "0%",
       left: "53%",
@@ -268,6 +290,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 25,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "0%",
       left: "64.5%",
@@ -278,6 +301,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 26,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "0%",
       left: "76%",
@@ -288,6 +312,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 27,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "0%",
       left: "87.5%",
@@ -298,6 +323,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 28,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "0%",
       left: "99%",
@@ -308,6 +334,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 29,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "0%",
       left: "110%",
@@ -318,6 +345,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 31,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "13%",
       left: "122%",
@@ -328,6 +356,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 32,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "21.3%",
       left: "122%",
@@ -338,6 +367,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 33,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "29.3%",
       left: "122%",
@@ -348,6 +378,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 34,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "37.5%",
       left: "122%",
@@ -358,6 +389,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 35,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "45.7%",
       left: "122%",
@@ -368,6 +400,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 36,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "54%",
       left: "122%",
@@ -378,6 +411,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 37,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "62%",
       left: "122%",
@@ -388,6 +422,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 38,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "70%",
       left: "122%",
@@ -398,6 +433,7 @@ export const districtZone: DistrictZone[] = [
   {
     id: 39,
     name: "Rue ",
+    price: 100,
     coordinates: {
       top: "78%",
       left: "122%",
