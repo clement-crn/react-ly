@@ -19,5 +19,5 @@ export type DistrictZone = {
     width: string
     height: string
   }
-  ownerId?: number
+  ownerName?: string
 }
