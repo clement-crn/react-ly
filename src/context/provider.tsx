@@ -19,7 +19,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
 
   const [bot2, setBot2] = useState<Player>({
     id: 1,
-    username: "Bot2",
+    username: "bot2",
     isPlaying: false,
     money: 1000,
     isPrisoner: false,
@@ -28,7 +28,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   })
   const [bot3, setBot3] = useState<Player>({
     id: 2,
-    username: "Bot3",
+    username: "bot3",
     isPlaying: false,
     money: 1000,
     isPrisoner: false,
@@ -37,7 +37,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   })
   const [bot4, setBot4] = useState<Player>({
     id: 3,
-    username: "Bot4",
+    username: "bot4",
     isPlaying: false,
     money: 1000,
     isPrisoner: false,
@@ -46,7 +46,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   })
   const [humanPlayer, setHumanPlayer] = useState<Player>({
     id: 0,
-    username: "",
+    username: "human",
     isPlaying: false,
     money: 1000,
     isPrisoner: false,
