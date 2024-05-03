@@ -16,11 +16,12 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [listOfOwnedProperties, setListOfOwnedProperties] = useState<
     DistrictZone[]
   >([])
+  const [currentPlayerPlaying, setCurrentPlayerPlaying] = useState<string>("")
 
   const [bot2, setBot2] = useState<Player>({
     id: 1,
     username: "bot2",
-    isPlaying: false,
+
     money: 1000,
     isPrisoner: false,
     startingPosition: 1,
@@ -29,7 +30,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [bot3, setBot3] = useState<Player>({
     id: 2,
     username: "bot3",
-    isPlaying: false,
+
     money: 1000,
     isPrisoner: false,
     startingPosition: 1,
@@ -38,7 +39,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [bot4, setBot4] = useState<Player>({
     id: 3,
     username: "bot4",
-    isPlaying: false,
+
     money: 1000,
     isPrisoner: false,
     startingPosition: 1,
@@ -47,7 +48,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [humanPlayer, setHumanPlayer] = useState<Player>({
     id: 0,
     username: "human",
-    isPlaying: false,
+
     money: 1000,
     isPrisoner: false,
     startingPosition: 1,
@@ -58,21 +59,18 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     return structuredClone([humanPlayer, bot2, bot3, bot4])
   }, [humanPlayer, bot2, bot3, bot4])
 
-  const setPlayer = (
-    target: "human" | "bot2" | "bot3" | "bot4",
-    payload: Partial<Player>
-  ) => {
+  const setPlayer = (target: number, payload: Partial<Player>) => {
     switch (target) {
-      case "human":
+      case 0: //always
         setHumanPlayer((prev) => structuredClone({ ...prev, ...payload }))
         break
-      case "bot2":
+      case 1:
         setBot2((prev) => structuredClone({ ...prev, ...payload }))
         break
-      case "bot3":
+      case 2:
         setBot3((prev) => structuredClone({ ...prev, ...payload }))
         break
-      case "bot4":
+      case 3:
         setBot4((prev) => structuredClone({ ...prev, ...payload }))
         break
       default:
@@ -93,6 +91,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     bot4,
     currentPlayerIndex,
     listOfOwnedProperties,
+    currentPlayerPlaying,
     setTheme,
     setIsGameStarted,
     setDicesStepFinished,
@@ -101,6 +100,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     setPlayer,
     setCurrentPlayerIndex,
     setListOfOwnedProperties,
+    setCurrentPlayerPlaying,
   }
 
   return (
