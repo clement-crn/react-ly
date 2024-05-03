@@ -24,7 +24,7 @@ export const useDiceController = () => {
         "est maintenant: ",
         player.boardPosition
       )
-      setCurrentPlayerPlaying(player.username)
+      setCurrentPlayerPlaying(player.id)
       console.log(">>>Le joueur actuel est: ", currentPlayerPlaying)
     }
   }

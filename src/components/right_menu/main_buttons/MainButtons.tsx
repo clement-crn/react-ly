@@ -2,12 +2,22 @@
 
 import { useMainContext } from "@/context/context"
 import style from "./MainButtons.module.css"
-import { useDiceController } from "@/components/dice_controller/DiceController"
+import { useDiceController } from "@/hooks/dice_controller/DiceController"
+import { useEffect } from "react"
 
 function MainButtons() {
-  const { setCurrentPlayerIndex, startingOrder, currentPlayerIndex } =
-    useMainContext()
+  const {
+    startingOrder,
+    currentPlayerIndex,
+    setCurrentPlayerIndex,
+    setCurrentPlayerPlaying,
+  } = useMainContext()
   const { rollDicesMainGame } = useDiceController()
+
+  useEffect(() => {
+    //humain commence
+    setCurrentPlayerPlaying(0)
+  }, [])
 
   const startPlayerTurn = () => {
     //1 lance le de et deplace le pion du joueur sur le plateau

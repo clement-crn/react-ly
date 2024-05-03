@@ -16,7 +16,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [listOfOwnedProperties, setListOfOwnedProperties] = useState<
     DistrictZone[]
   >([])
-  const [currentPlayerPlaying, setCurrentPlayerPlaying] = useState<string>("")
+  const [currentPlayerPlaying, setCurrentPlayerPlaying] = useState<number>(0)
 
   const [bot2, setBot2] = useState<Player>({
     id: 1,
