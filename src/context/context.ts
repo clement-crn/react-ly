@@ -14,17 +14,16 @@ export type MainState = {
   bot4: Player
   currentPlayerIndex: number
   listOfOwnedProperties: DistrictZone[]
+  currentPlayerPlaying: string
   setListOfOwnedProperties: React.Dispatch<React.SetStateAction<DistrictZone[]>>
   setDicesLaunched: React.Dispatch<React.SetStateAction<boolean>>
   setIsGameStarted: React.Dispatch<React.SetStateAction<boolean>>
   setTheme: React.Dispatch<React.SetStateAction<string>>
   setDicesStepFinished: React.Dispatch<React.SetStateAction<boolean>>
   setStartingOrder: React.Dispatch<React.SetStateAction<number[]>>
-  setPlayer: (
-    target: "human" | "bot2" | "bot3" | "bot4",
-    payload: Partial<Player>
-  ) => void
+  setPlayer: (target: number, payload: Partial<Player>) => void
   setCurrentPlayerIndex: React.Dispatch<React.SetStateAction<number>>
+  setCurrentPlayerPlaying: React.Dispatch<React.SetStateAction<string>>
 }
 
 const MainContext = createContext<MainState | undefined>(undefined)
