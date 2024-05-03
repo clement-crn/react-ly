@@ -2,8 +2,8 @@ import React from "react"
 import { useMainContext } from "@/context/context"
 const DevPanel = () => {
   const { startingOrder, currentPlayerIndex, allPlayers } = useMainContext()
-  const context = useMainContext()
-  console.log("Context:", JSON.stringify(context, null, 2))
+  // const context = useMainContext()
+  // // console.log("Context:", JSON.stringify(context, null, 2))
 
   const getCurrentPlayerUsername = () => {
     const currentPlayer = allPlayers[currentPlayerIndex]
