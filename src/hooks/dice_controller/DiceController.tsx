@@ -13,14 +13,19 @@ export const useDiceController = () => {
 
   const rollDicesMainGame = () => {
     const randomNumber = Math.floor(Math.random() * 12) + 1
-
     if (player) {
-      setPlayer(player.id, {
-        ...player,
-        boardPosition: randomNumber + player.boardPosition,
-      })
-
       setCurrentPlayerPlaying(player.id)
+      if (randomNumber + player?.boardPosition > 39) {
+        setPlayer(player.id, {
+          ...player,
+          boardPosition: randomNumber + player.boardPosition - 40,
+        })
+      } else {
+        setPlayer(player.id, {
+          ...player,
+          boardPosition: randomNumber + player.boardPosition,
+        })
+      }
     }
   }
   useEffect(() => {
