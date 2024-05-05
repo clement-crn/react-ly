@@ -1,10 +1,13 @@
 import React from "react"
-
 import style from "./Board.module.css"
 import { gameboard } from "@/assets"
 import { cornerZone, districtZone } from "./const"
+import { useMainContext } from "@/context/context"
+import Pawn from "./pawn/pawn"
 
 function Board() {
+  const { allPlayers } = useMainContext()
+
   const zoneManager = (id: number) => {
     console.log(id, name)
   }
@@ -26,7 +29,15 @@ function Board() {
             onClick={() => {
               zoneManager(zone.id)
             }}
-          ></div>
+          >
+            {allPlayers &&
+              Object.values(allPlayers).map(
+                (player) =>
+                  player.boardPosition === zone.id && (
+                    <Pawn key={player.id} playerId={player.id} />
+                  )
+              )}
+          </div>
         ))}
         {districtZone.map((zone, index) => (
           <div
@@ -44,7 +55,26 @@ function Board() {
             onClick={() => {
               zoneManager(zone.id)
             }}
-          ></div>
+          >
+            {/* Render pawns for all players in the current zone */}
+            {allPlayers &&
+              Object.values(allPlayers).map(
+                (player) =>
+                  player.boardPosition === zone.id && (
+                    <div
+                      key={player.id}
+                      className={style.pawnContainer}
+                      style={{
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    >
+                      <Pawn playerId={player.id} />
+                    </div>
+                  )
+              )}
+          </div>
         ))}
       </div>
     </div>

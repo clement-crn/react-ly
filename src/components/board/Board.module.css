@@ -22,6 +22,9 @@
   cursor: pointer;
   z-index: 99;
   background-color: rgba(100, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .clickableZone div:hover {
