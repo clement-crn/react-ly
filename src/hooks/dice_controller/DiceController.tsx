@@ -1,4 +1,5 @@
 import { useMainContext } from "@/context/context"
+import { useEffect } from "react"
 
 export const useDiceController = () => {
   const {
@@ -8,26 +9,26 @@ export const useDiceController = () => {
     setPlayer,
     setCurrentPlayerPlaying,
   } = useMainContext()
+  const player = allPlayers?.[currentPlayerIndex]
 
   const rollDicesMainGame = () => {
     const randomNumber = Math.floor(Math.random() * 12) + 1
-    const player = allPlayers?.[currentPlayerIndex]
 
     if (player) {
       setPlayer(player.id, {
         ...player,
-        boardPosition: randomNumber,
+        boardPosition: randomNumber + player.boardPosition,
       })
-      console.log(
-        ">>>La position du joueur ",
-        player.username,
-        "est maintenant: ",
-        player.boardPosition
-      )
+
       setCurrentPlayerPlaying(player.id)
-      console.log(">>>Le joueur actuel est: ", currentPlayerPlaying)
     }
   }
+  useEffect(() => {
+    if (player) {
+      console.log(">>>Le joueur actuel est: ", player.username)
+      console.log(">>>Sa position est maintenant: ", player?.boardPosition)
+    }
+  }, [currentPlayerPlaying])
 
   return { rollDicesMainGame }
 }
