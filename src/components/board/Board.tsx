@@ -3,7 +3,7 @@ import style from "./Board.module.css"
 import { gameboard } from "@/assets"
 import { cornerZone, districtZone } from "./const"
 import { useMainContext } from "@/context/context"
-import Pawn from "./pawn/pawn"
+import Pawn from "./pawn/Pawn"
 
 function Board() {
   const { allPlayers } = useMainContext()
