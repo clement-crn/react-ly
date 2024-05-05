@@ -17,6 +17,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     DistrictZone[]
   >([])
   const [currentPlayerPlaying, setCurrentPlayerPlaying] = useState<number>(0)
+  const [isDevMode, setDevMode] = useState<boolean>(false)
 
   const [bot2, setBot2] = useState<Player>({
     id: 1,
@@ -92,6 +93,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     currentPlayerIndex,
     listOfOwnedProperties,
     currentPlayerPlaying,
+    isDevMode,
     setTheme,
     setIsGameStarted,
     setDicesStepFinished,
@@ -101,6 +103,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     setCurrentPlayerIndex,
     setListOfOwnedProperties,
     setCurrentPlayerPlaying,
+    setDevMode,
   }
 
   return (

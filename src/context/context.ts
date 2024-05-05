@@ -15,6 +15,7 @@ export type MainState = {
   currentPlayerIndex: number
   listOfOwnedProperties: DistrictZone[]
   currentPlayerPlaying: number //>>> l'id du joueur
+  isDevMode: boolean
   setListOfOwnedProperties: React.Dispatch<React.SetStateAction<DistrictZone[]>>
   setDicesLaunched: React.Dispatch<React.SetStateAction<boolean>>
   setIsGameStarted: React.Dispatch<React.SetStateAction<boolean>>
@@ -24,6 +25,7 @@ export type MainState = {
   setPlayer: (target: number, payload: Partial<Player>) => void //>>> via l'id du joueur
   setCurrentPlayerIndex: React.Dispatch<React.SetStateAction<number>>
   setCurrentPlayerPlaying: React.Dispatch<React.SetStateAction<number>>
+  setDevMode: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const MainContext = createContext<MainState | undefined>(undefined)
