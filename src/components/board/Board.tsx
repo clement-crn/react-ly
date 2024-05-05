@@ -70,7 +70,7 @@ function Board() {
                         transform: "translate(-50%, -50%)",
                       }}
                     >
-                      <Pawn playerId={player.id} />
+                      <Pawn playerId={player.id} text={player.username} />
                     </div>
                   )
               )}

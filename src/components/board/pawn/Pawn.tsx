@@ -2,21 +2,22 @@ import style from "./Pawn.module.css"
 
 type PawnProps = {
   playerId: number
+  text?: string
 }
 
-const Pawn = ({ playerId }: PawnProps) => {
+const Pawn = ({ playerId, text }: PawnProps) => {
   let shape, color
   switch (playerId) {
-    case 2:
+    case 1:
       shape = "square"
       color = "blue"
       break
-    case 3:
+    case 2:
       shape = "triangle"
       color = "green"
       break
-    case 4:
-      shape = "star"
+    case 3:
+      shape = "square"
       color = "yellow"
       break
     default:
@@ -28,9 +29,15 @@ const Pawn = ({ playerId }: PawnProps) => {
   return (
     <div
       className={`${style.pawn} ${style[shape]}`}
-      style={{ backgroundColor: color }}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: color,
+        fontWeight: "bold",
+      }}
     >
-      {color}
+      {text}
     </div>
   )
 }

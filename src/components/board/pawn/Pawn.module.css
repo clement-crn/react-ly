@@ -12,31 +12,6 @@
   border-radius: 5px;
 }
 
-.triangle {
-  width: 0;
-  height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-bottom: 43.3px solid;
-}
-
 .star {
   position: relative;
-}
-
-.star:before,
-.star:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  border-bottom: 25px solid transparent;
-  border-left: 30px solid;
-  border-top: 25px solid transparent;
-  transform: rotate(35deg);
-}
-
-.star:after {
-  transform: rotate(-35deg);
 }
