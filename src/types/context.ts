@@ -6,6 +6,7 @@ declare global {
     isPrisoner: boolean
     startingPosition: number | undefined
     boardPosition: number
+    consecutiveJailRolls: number
   }
 }
 export type module = unknown

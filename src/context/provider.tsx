@@ -18,11 +18,12 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   >([])
   const [currentPlayerPlaying, setCurrentPlayerPlaying] = useState<number>(0)
   const [isDevMode, setDevMode] = useState<boolean>(false)
+  const [consecutiveJailRolls, setConsecutiveJailRolls] = useState<number>(0)
 
   const [bot2, setBot2] = useState<Player>({
     id: 1,
     username: "bot2",
-
+    consecutiveJailRolls: 0,
     money: 1000,
     isPrisoner: false,
     startingPosition: 1,
@@ -31,7 +32,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [bot3, setBot3] = useState<Player>({
     id: 2,
     username: "bot3",
-
+    consecutiveJailRolls: 0,
     money: 1000,
     isPrisoner: false,
     startingPosition: 1,
@@ -40,7 +41,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [bot4, setBot4] = useState<Player>({
     id: 3,
     username: "bot4",
-
+    consecutiveJailRolls: 0,
     money: 1000,
     isPrisoner: false,
     startingPosition: 1,
@@ -49,7 +50,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [humanPlayer, setHumanPlayer] = useState<Player>({
     id: 0,
     username: "human",
-
+    consecutiveJailRolls: 0,
     money: 1000,
     isPrisoner: false,
     startingPosition: 1,
@@ -94,6 +95,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     listOfOwnedProperties,
     currentPlayerPlaying,
     isDevMode,
+    consecutiveJailRolls,
     setTheme,
     setIsGameStarted,
     setDicesStepFinished,
@@ -104,6 +106,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     setListOfOwnedProperties,
     setCurrentPlayerPlaying,
     setDevMode,
+    setConsecutiveJailRolls,
   }
 
   return (
