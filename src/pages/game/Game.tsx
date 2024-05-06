@@ -3,7 +3,6 @@ import style from "./game.module.css"
 import { useMainContext } from "../../context/context"
 import RightMenu from "@/components/right_menu/RightMenu"
 import { Board } from "@/components/board"
-import DevPanel from "@/components/dev_panel/DevPanel"
 
 function Game() {
   const { setIsGameStarted } = useMainContext()
@@ -23,9 +22,9 @@ function Game() {
         </div>
         <div className={style.board_wrapper}>
           <Board />
-          <div className={style.devPanel}>
+          {/* <div className={style.devPanel}>
             <DevPanel />
-          </div>
+          </div> */}
         </div>
       </div>
     </>
