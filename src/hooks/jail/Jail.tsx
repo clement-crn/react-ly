@@ -7,9 +7,6 @@ export const useJail = () => {
     setPlayer(currentPlayerPlaying, {
       ...allPlayers[currentPlayerPlaying],
       isPrisoner: true,
-    })
-    setPlayer(currentPlayerPlaying, {
-      ...allPlayers[currentPlayerPlaying],
       boardPosition: 10,
     })
   }
