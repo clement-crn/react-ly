@@ -40,19 +40,19 @@ const StartingDices = () => {
     })
     console.log(rankArray, "Rank array without sorting")
 
-    setPlayer("human", {
+    setPlayer(0, {
       ...humanPlayer,
       startingPosition: rankArray[0],
     })
-    setPlayer("bot2", {
+    setPlayer(1, {
       ...bot2,
       startingPosition: rankArray[1],
     })
-    setPlayer("bot3", {
+    setPlayer(2, {
       ...bot3,
       startingPosition: rankArray[2],
     })
-    setPlayer("bot4", {
+    setPlayer(3, {
       ...bot4,
       startingPosition: rankArray[3],
     })
