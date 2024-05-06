@@ -14,7 +14,7 @@ function Landingpage() {
 
   const handleValidation = () => {
     startTransition(() => {
-      setPlayer("human", {
+      setPlayer(0, {
         ...humanPlayer,
         username: inputValue,
       })
