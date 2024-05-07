@@ -1,10 +1,12 @@
 import { useMainContext } from "@/context/context"
 import { useJail } from "../jail/Jail"
+import { useLuck } from "../luck/Luck"
 
 export const useDiceController = () => {
   const { currentPlayerIndex, allPlayers, setPlayer, setCurrentPlayerPlaying } =
     useMainContext()
   const { sendPlayerToJail } = useJail()
+  const { pickLuckCard } = useLuck()
   const player = allPlayers?.[currentPlayerIndex]
   let consecutiveLowRolls = player?.consecutiveJailRolls || 0
 
@@ -59,6 +61,12 @@ export const useDiceController = () => {
         )
         console.log(player.isPrisoner)
       }
+    }
+    if (randomNumber === 7 || randomNumber === 22) {
+      pickLuckCard()
+      console.log(
+        ">>>>>>>>Le joueur est sur une carte chance via DiceController ================"
+      )
     }
 
     console.log(">>>>>>>>Le joueur a lancé: ", randomNumber)
