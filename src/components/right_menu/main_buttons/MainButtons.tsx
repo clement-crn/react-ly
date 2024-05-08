@@ -5,6 +5,7 @@ import style from "./MainButtons.module.css"
 import { useDiceController } from "@/hooks/dice_controller/DiceController"
 import { useEffect } from "react"
 import { useJail } from "@/hooks/jail/Jail"
+import { useLuck } from "@/hooks/cards/luck/Luck"
 
 function MainButtons() {
   const {
@@ -16,6 +17,7 @@ function MainButtons() {
   } = useMainContext()
   const { rollDicesMainGame } = useDiceController()
   const { sendPlayerToJail } = useJail()
+  const { payTax } = useLuck()
   const player = allPlayers?.[currentPlayerPlaying]
 
   useEffect(() => {
@@ -32,6 +34,9 @@ function MainButtons() {
 
   const endTurn = () => {
     const nextPlayerIndex = (currentPlayerPlaying + 1) % startingOrder.length
+    if (allPlayers[nextPlayerIndex]?.isBankrupt) {
+      endTurn()
+    }
     setCurrentPlayerIndex(nextPlayerIndex)
   }
 
@@ -45,6 +50,7 @@ function MainButtons() {
       <button onClick={() => endTurn()}>joueur suivant</button>
       {/* DEV */}
       <button onClick={() => sendPlayerToJail()}>Prison</button>
+      <button onClick={() => payTax()}>Taxe</button>
       player: {player?.username}
       <br />
       jail: {player?.isPrisoner ? "true" : "false"}
