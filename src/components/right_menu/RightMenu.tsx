@@ -7,7 +7,7 @@ import { user_img } from "@/assets"
 import MainButtons from "./main_buttons/MainButtons"
 
 function RightMenu() {
-  const { humanPlayer, bot2, bot3, bot4, allPlayers } = useMainContext()
+  const { allPlayers } = useMainContext()
 
   return (
     <div className={style.rightmenu_container}>
@@ -16,18 +16,8 @@ function RightMenu() {
           {allPlayers.map((player, index) => (
             <PlayerInfo
               key={index + 1}
-              playerNameProp={
-                [
-                  humanPlayer.username,
-                  bot2.username,
-                  bot3.username,
-                  bot4.username,
-                ][index]
-              }
-              playerMoneyProp={
-                [humanPlayer.money, bot2.money, bot3.money, bot4.money][index]
-              }
-              playerPictureProp={user_img}
+              player={player}
+              playerPicture={user_img}
             />
           ))}
         </div>

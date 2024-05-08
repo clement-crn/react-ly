@@ -1,32 +1,43 @@
-import React from "react"
 import style from "./PlayerInfo.module.css"
 
 import { PlayerPicture } from "../types"
+import { useMainContext } from "@/context/context"
 
 interface PlayerInfoProps {
-  playerNameProp: string | undefined
-  playerMoneyProp?: number
-  playerPictureProp: PlayerPicture
+  player: Player
+  playerPicture: PlayerPicture
 }
 
-const PlayerInfo = ({
-  playerNameProp,
-  playerMoneyProp,
-  playerPictureProp,
-}: PlayerInfoProps) => {
+const PlayerInfo = ({ player, playerPicture }: PlayerInfoProps) => {
+  const { currentPlayerPlaying } = useMainContext()
+
   return (
     <div className={style.playerinfo_container}>
-      <div className={style.playerinfo_wrapper}>
+      <div
+        style={{
+          backgroundColor: "rgb(241, 241, 241)",
+          borderRadius: "10px",
+          display: "flex",
+          flexDirection: "row",
+          gap: "20px",
+          alignItems: "center",
+          height: "8vh",
+          border:
+            player.id === currentPlayerPlaying
+              ? "3px black solid"
+              : "0px black solid",
+        }}
+      >
         <img
-          src={playerPictureProp}
+          src={playerPicture}
           alt="Portrait du joueur."
           className={style.user_img}
         />
         <div className={style.playerinfo_name_and_money_wrapper}>
-          <div className={style.playerinfo_name}>{playerNameProp}</div>
+          <div className={style.playerinfo_name}>{player.username}</div>
           <div
             className={style.playerinfo_bank_money}
-          >{`${playerMoneyProp} $`}</div>
+          >{`${player.money} $`}</div>
         </div>
       </div>
     </div>
