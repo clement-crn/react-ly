@@ -1,6 +1,6 @@
 import { useMainContext } from "@/context/context"
 import { useJail } from "../jail/Jail"
-import { useLuck } from "../luck/Luck"
+import { useLuck } from "../cards/luck/Luck"
 
 export const useDiceController = () => {
   const { currentPlayerIndex, allPlayers, setPlayer, setCurrentPlayerPlaying } =
