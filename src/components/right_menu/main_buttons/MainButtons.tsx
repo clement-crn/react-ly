@@ -47,7 +47,7 @@ function MainButtons() {
   return (
     <div className={style.buttons_container}>
       <button onClick={() => startPlayerTurn()}>Lancer le dé</button>
-      <button onClick={() => endTurn()}>joueur suivant</button>
+      <button onClick={() => endTurn()}>Terminer le tour</button>
       {/* DEV */}
       <button onClick={() => sendPlayerToJail()}>Prison</button>
       <button onClick={() => payTax()}>Taxe</button>
