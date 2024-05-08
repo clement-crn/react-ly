@@ -16,9 +16,8 @@ export const luckCards: LuckCard[] = [
   },
   {
     id: 2,
-    title: "Avanez vers l'avenue Illinois",
-    description:
-      "Avancez vers le Boulevard de la Vilette. Si vous passez par la case départ, recevez 200$.",
-    action: "ADVANCETOVILLETTE",
+    title: "Impôt sur le revenu",
+    description: "Vous devez payer 10% de votre capital total.",
+    action: "PAYTAX",
   },
 ]

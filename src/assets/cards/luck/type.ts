@@ -2,5 +2,5 @@ export type LuckCard = {
   id: number
   title: string
   description: string
-  action: "GOTOJAIL" | "ADVANCETOGO" | "ADVANCETOVILLETTE"
+  action: "GOTOJAIL" | "ADVANCETOGO" | "PAYTAX"
 }
