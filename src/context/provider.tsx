@@ -28,6 +28,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     isPrisoner: false,
     startingPosition: 1,
     boardPosition: 0,
+    isBankrupt: false,
   })
   const [bot3, setBot3] = useState<Player>({
     id: 2,
@@ -37,6 +38,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     isPrisoner: false,
     startingPosition: 1,
     boardPosition: 0,
+    isBankrupt: false,
   })
   const [bot4, setBot4] = useState<Player>({
     id: 3,
@@ -46,6 +48,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     isPrisoner: false,
     startingPosition: 1,
     boardPosition: 0,
+    isBankrupt: false,
   })
   const [humanPlayer, setHumanPlayer] = useState<Player>({
     id: 0,
@@ -55,6 +58,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     isPrisoner: false,
     startingPosition: 1,
     boardPosition: 0,
+    isBankrupt: false,
   })
 
   const allPlayers = useMemo(() => {

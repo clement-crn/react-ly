@@ -7,6 +7,7 @@ declare global {
     startingPosition: number | undefined
     boardPosition: number
     consecutiveJailRolls: number
+    isBankrupt: boolean
   }
 }
 export type module = unknown
