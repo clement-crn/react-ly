@@ -4,6 +4,8 @@ import { Game } from "./pages/game"
 import { Suspense } from "react"
 import { Loading } from "./utils"
 import { StartingDices } from "./pages/dices"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 function App() {
   const { isGameStarted, dicesStepFinished } = useMainContext()
@@ -21,6 +23,7 @@ function App() {
           )}
         </div>
       </Suspense>
+      <ToastContainer position="top-center" className="blue-toast-container" />
     </>
   )
 }
