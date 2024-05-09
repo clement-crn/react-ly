@@ -6,6 +6,7 @@ import { useDiceController } from "@/hooks/dice_controller/DiceController"
 import { useEffect } from "react"
 import { useJail } from "@/hooks/jail/Jail"
 import { useLuck } from "@/hooks/cards/luck/Luck"
+import { toast } from "react-toastify"
 
 function MainButtons() {
   const {
@@ -27,7 +28,10 @@ function MainButtons() {
 
   const startPlayerTurn = () => {
     //1 lance le de et deplace le pion du joueur sur le plateau
-    rollDicesMainGame()
+    const randomNumber = rollDicesMainGame()
+    toast.success(`Vous obtenez:    ${randomNumber}`, {
+      autoClose: 5000,
+    })
 
     //2 verifie si le joueur est sur une propriete ou non
   }
