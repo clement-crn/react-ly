@@ -12,9 +12,8 @@ export const useDiceController = () => {
 
   const rollDicesMainGame = () => {
     if (!player) return
-
+    const randomNumber = Math.floor(Math.random() * 6) + 1
     setCurrentPlayerPlaying(player.id)
-    const randomNumber = Math.floor(Math.random() * 12) + 1
 
     if (player.isPrisoner) {
       // Player is in jail
@@ -68,8 +67,7 @@ export const useDiceController = () => {
         ">>>>>>>>Le joueur est sur une carte chance via DiceController ================"
       )
     }
-
-    console.log(">>>>>>>>Le joueur a lancé: ", randomNumber)
+    return randomNumber
   }
 
   return { rollDicesMainGame }
