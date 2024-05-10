@@ -41,7 +41,7 @@ function MainButtons() {
     if (allPlayers[nextPlayerIndex]?.isBankrupt) {
       endTurn()
     }
-    setCurrentPlayerIndex(nextPlayerIndex)
+    setCurrentPlayerPlaying(nextPlayerIndex)
   }
 
   useEffect(() => {
