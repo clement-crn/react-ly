@@ -12,7 +12,6 @@ export type MainState = {
   bot2: Player
   bot3: Player
   bot4: Player
-  currentPlayerIndex: number
   listOfOwnedProperties: DistrictZone[]
   currentPlayerPlaying: number //>>> l'id du joueur
   isDevMode: boolean
@@ -24,7 +23,6 @@ export type MainState = {
   setDicesStepFinished: React.Dispatch<React.SetStateAction<boolean>>
   setStartingOrder: React.Dispatch<React.SetStateAction<number[]>>
   setPlayer: (target: number, payload: Partial<Player>) => void //>>> via l'id du joueur
-  setCurrentPlayerIndex: React.Dispatch<React.SetStateAction<number>>
   setCurrentPlayerPlaying: React.Dispatch<React.SetStateAction<number>>
   setDevMode: React.Dispatch<React.SetStateAction<boolean>>
   setConsecutiveJailRolls: React.Dispatch<React.SetStateAction<number>>

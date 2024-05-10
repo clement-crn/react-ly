@@ -13,7 +13,6 @@ function MainButtons() {
     startingOrder,
     currentPlayerPlaying,
     allPlayers,
-    setCurrentPlayerIndex,
     setCurrentPlayerPlaying,
   } = useMainContext()
   const { rollDicesMainGame } = useDiceController()
