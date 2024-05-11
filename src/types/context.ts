@@ -1,3 +1,5 @@
+import { DistrictZone } from "@/components/board/types"
+
 declare global {
   type Player = {
     id: number
@@ -8,6 +10,7 @@ declare global {
     boardPosition: number
     consecutiveJailRolls: number
     isBankrupt: boolean
+    propertiesOwned: DistrictZone[]
   }
 }
 export type module = unknown
