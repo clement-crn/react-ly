@@ -3,11 +3,15 @@ import { useJail } from "../jail/Jail"
 import { useLuck } from "../cards/luck/Luck"
 
 export const useDiceController = () => {
-  const { currentPlayerIndex, allPlayers, setPlayer, setCurrentPlayerPlaying } =
-    useMainContext()
+  const {
+    currentPlayerPlaying,
+    allPlayers,
+    setPlayer,
+    setCurrentPlayerPlaying,
+  } = useMainContext()
   const { sendPlayerToJail } = useJail()
   const { pickLuckCard } = useLuck()
-  const player = allPlayers?.[currentPlayerIndex]
+  const player = allPlayers?.[currentPlayerPlaying]
   let consecutiveLowRolls = player?.consecutiveJailRolls || 0
 
   const rollDicesMainGame = () => {
