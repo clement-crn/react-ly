@@ -3,19 +3,27 @@ import { createContext, useContext } from "react"
 
 export type MainState = {
   theme: string
+
+  //debut du jeu
   isGameStarted: boolean
   dicesStepFinished: boolean
-  startingOrder: number[]
-  allPlayers: Player[]
+
+  //jeu principal
   dicesLaunched: boolean
+  startingOrder: number[]
+  isDevMode: boolean
+  showPropertyModal: boolean
+
+  //joueurs
+  allPlayers: Player[]
   humanPlayer: Player
   bot2: Player
   bot3: Player
   bot4: Player
   listOfOwnedProperties: DistrictZone[]
-  currentPlayerPlaying: number //>>> l'id du joueur
-  isDevMode: boolean
   consecutiveJailRolls: number
+  currentPlayerPlaying: number //>>> l'id du joueur
+
   setListOfOwnedProperties: React.Dispatch<React.SetStateAction<DistrictZone[]>>
   setDicesLaunched: React.Dispatch<React.SetStateAction<boolean>>
   setIsGameStarted: React.Dispatch<React.SetStateAction<boolean>>
@@ -26,6 +34,7 @@ export type MainState = {
   setCurrentPlayerPlaying: React.Dispatch<React.SetStateAction<number>>
   setDevMode: React.Dispatch<React.SetStateAction<boolean>>
   setConsecutiveJailRolls: React.Dispatch<React.SetStateAction<number>>
+  setShowPropertyModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const MainContext = createContext<MainState | undefined>(undefined)
