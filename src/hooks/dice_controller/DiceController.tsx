@@ -1,6 +1,7 @@
 import { useMainContext } from "@/context/context"
 import { useJail } from "../jail/Jail"
 import { useLuck } from "../cards/luck/Luck"
+import { usePropertyManager } from "../property_manager/PropertyManager"
 
 export const useDiceController = () => {
   const {
@@ -11,6 +12,7 @@ export const useDiceController = () => {
   } = useMainContext()
   const { sendPlayerToJail } = useJail()
   const { pickLuckCard } = useLuck()
+  const { handleProperty } = usePropertyManager()
   const player = allPlayers?.[currentPlayerPlaying]
   let consecutiveLowRolls = player?.consecutiveJailRolls || 0
 
@@ -18,6 +20,7 @@ export const useDiceController = () => {
     if (!player) return
     const randomNumber = Math.floor(Math.random() * 6) + 1
     setCurrentPlayerPlaying(player.id)
+    handleProperty()
 
     if (player.isPrisoner) {
       // Player is in jail
