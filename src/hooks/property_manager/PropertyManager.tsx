@@ -2,7 +2,8 @@ import { useMainContext } from "@/context/context"
 
 //verifie s'il existe un proprietaire
 export const usePropertyManager = () => {
-  const { allPlayers, currentPlayerPlaying, setPlayer } = useMainContext()
+  const { allPlayers, currentPlayerPlaying, setShowPropertyModal } =
+    useMainContext()
   const player = allPlayers[currentPlayerPlaying]
 
   const handleProperty = () => {
@@ -10,6 +11,12 @@ export const usePropertyManager = () => {
     const isPropertyOwned = player?.propertiesOwned.some(
       (property) => property.id === player.boardPosition
     )
+    if (!isPropertyOwned) {
+      setShowPropertyModal(true)
+      console.log(">>>>>>show property modal")
+    } else {
+      alert("Ce bien est deja possede par un autre joueur")
+    }
 
     console.log(">>>>>>handle property called")
     console.log(">>>>>>isPropertyOwned", isPropertyOwned)
