@@ -1,12 +1,12 @@
-import React from "react"
 import style from "./game.module.css"
 import { useMainContext } from "../../context/context"
 import RightMenu from "@/components/right_menu/RightMenu"
 import { Board } from "@/components/board"
 import { IoArrowBack } from "react-icons/io5"
+import PropertyModal from "@/components/property_modal/PropertyModal"
 
 function Game() {
-  const { setIsGameStarted } = useMainContext()
+  const { setIsGameStarted, showPropertyModal } = useMainContext()
 
   const back = () => {
     setIsGameStarted(false)
@@ -27,6 +27,7 @@ function Game() {
             <DevPanel />
           </div> */}
         </div>
+        {showPropertyModal && <PropertyModal />}
       </div>
     </>
   )
