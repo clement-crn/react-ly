@@ -43,7 +43,7 @@ export const cornerZone: CornerZone[] = [
   },
 ]
 
-export const districtZone: DistrictZone[] = [
+export const districtZones: DistrictZone[] = [
   {
     id: 1,
     name: "Rue ",

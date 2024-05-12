@@ -1,7 +1,7 @@
 import React from "react"
 import style from "./Board.module.css"
 import { gameboard } from "@/assets"
-import { cornerZone, districtZone } from "./const"
+import { cornerZone, districtZones } from "./const"
 import { useMainContext } from "@/context/context"
 import Pawn from "./pawn/Pawn"
 
@@ -39,7 +39,7 @@ function Board() {
               )}
           </div>
         ))}
-        {districtZone.map((zone, index) => (
+        {districtZones.map((zone, index) => (
           <div
             key={zone.id}
             className={style.clickableZone}
@@ -49,7 +49,7 @@ function Board() {
               width: zone.coordinates.width,
               height: zone.coordinates.height,
               backgroundColor: `hsla(${
-                index * (360 / districtZone.length)
+                index * (360 / districtZones.length)
               }, 100%, 50%, 0.2)`,
             }}
             onClick={() => {
