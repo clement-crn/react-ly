@@ -7,6 +7,7 @@ import { useEffect } from "react"
 import { useJail } from "@/hooks/jail/Jail"
 import { useLuck } from "@/hooks/cards/luck/Luck"
 import { toast } from "react-toastify"
+import sounds from "@/assets/sounds"
 
 function MainButtons() {
   const {
@@ -20,12 +21,16 @@ function MainButtons() {
   const { payTax } = useLuck()
   const player = allPlayers?.[currentPlayerPlaying]
 
+  const playSound = (sound: HTMLAudioElement) => {
+    sound.play()
+  }
   useEffect(() => {
     //humain commence
     setCurrentPlayerPlaying(0)
   }, [])
 
   const startPlayerTurn = () => {
+    playSound(sounds.pop)
     //1 lance le de et deplace le pion du joueur sur le plateau
     const randomNumber = rollDicesMainGame()
     toast.success(`Vous obtenez:    ${randomNumber}`, {
@@ -36,6 +41,7 @@ function MainButtons() {
   }
 
   const endTurn = () => {
+    playSound(sounds.pop)
     const nextPlayerIndex = (currentPlayerPlaying + 1) % startingOrder.length
     if (allPlayers[nextPlayerIndex]?.isBankrupt) {
       endTurn()
