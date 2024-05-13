@@ -1,5 +1,7 @@
 import pop from "./pop.mp3"
 
-export const sounds = {
-  pop,
+const sounds = {
+  pop: new Audio(pop),
 }
+
+export default sounds
