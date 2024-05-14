@@ -14,6 +14,10 @@ const PropertyModal = () => {
     (zone) => zone.id === player?.boardPosition
   )
 
+  const isPropertyOwned = player?.propertiesOwned?.some(
+    (property) => property.id === player.boardPosition
+  )
+
   return (
     showPropertyModal && (
       <div
@@ -39,7 +43,11 @@ const PropertyModal = () => {
         >
           {" "}
           <button onClick={() => setShowPropertyModal(false)}>X</button>
-          <h3>Ce bien n'a pas de proprietaire</h3>
+          {isPropertyOwned ? (
+            <p>Vous possédez cette propriété</p>
+          ) : (
+            <button>Acheter</button>
+          )}
           {currentZone && (
             <>
               <p>{currentZone.name}</p>
