@@ -1,4 +1,3 @@
-import { DistrictZone } from "@/components/board/types"
 import { createContext, useContext } from "react"
 
 export type MainState = {
@@ -20,11 +19,10 @@ export type MainState = {
   bot2: Player
   bot3: Player
   bot4: Player
-  listOfOwnedProperties: DistrictZone[]
+
   consecutiveJailRolls: number
   currentPlayerPlaying: number //>>> l'id du joueur
 
-  setListOfOwnedProperties: React.Dispatch<React.SetStateAction<DistrictZone[]>>
   setDicesLaunched: React.Dispatch<React.SetStateAction<boolean>>
   setIsGameStarted: React.Dispatch<React.SetStateAction<boolean>>
   setTheme: React.Dispatch<React.SetStateAction<string>>

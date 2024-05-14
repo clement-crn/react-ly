@@ -12,9 +12,6 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [dicesLaunched, setDicesLaunched] = useState<boolean>(false)
   const [dicesStepFinished, setDicesStepFinished] = useState<boolean>(false)
   const [startingOrder, setStartingOrder] = useState<number[]>([0, 0, 0, 0])
-  const [listOfOwnedProperties, setListOfOwnedProperties] = useState<
-    DistrictZone[]
-  >([])
   const [currentPlayerPlaying, setCurrentPlayerPlaying] = useState<number>(0)
   const [isDevMode, setDevMode] = useState<boolean>(false)
   const [consecutiveJailRolls, setConsecutiveJailRolls] = useState<number>(0)
@@ -99,7 +96,6 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     bot2,
     bot3,
     bot4,
-    listOfOwnedProperties,
     currentPlayerPlaying,
     isDevMode,
     consecutiveJailRolls,
@@ -110,7 +106,6 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     setStartingOrder,
     setDicesLaunched,
     setPlayer,
-    setListOfOwnedProperties,
     setCurrentPlayerPlaying,
     setDevMode,
     setConsecutiveJailRolls,
