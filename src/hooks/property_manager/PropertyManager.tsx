@@ -1,26 +1,30 @@
+import { districtZones } from "@/components/board/const"
+import { DistrictZone } from "@/components/board/types"
 import { useMainContext } from "@/context/context"
 
 //verifie s'il existe un proprietaire
 export const usePropertyManager = () => {
-  const { allPlayers, currentPlayerPlaying, setShowPropertyModal } =
-    useMainContext()
+  const { setShowPropertyModal } = useMainContext()
+  const { currentPlayerPlaying, allPlayers, setPlayer } = useMainContext()
   const player = allPlayers[currentPlayerPlaying]
 
   const handleProperty = () => {
     // check if player have the id of his boardPosition into the list of objects player.ownedProperties of type DistrictZone (so we can access the id of the property)
-    const isPropertyOwned = player?.propertiesOwned.some(
-      (property) => property.id === player.boardPosition
-    )
-    if (!isPropertyOwned) {
-      setShowPropertyModal(true)
-      console.log(">>>>>>show property modal")
-    } else {
-      alert("Ce bien est deja possede par un autre joueur")
-    }
-
+    setShowPropertyModal(true)
+    console.log(">>>>>>show property modal")
     console.log(">>>>>>handle property called")
-    console.log(">>>>>>isPropertyOwned", isPropertyOwned)
   }
 
-  return { handleProperty }
+  const buyProperty = () => {
+    if (player) {
+      const property = districtZones.find(
+        (zone) => zone.id === player.boardPosition
+      )
+      setPlayer(currentPlayerPlaying, {
+        propertiesOwned: [...player.propertiesOwned, property as DistrictZone],
+      })
+    }
+  }
+
+  return { handleProperty, buyProperty }
 }
