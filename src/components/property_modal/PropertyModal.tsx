@@ -1,5 +1,6 @@
 import { useMainContext } from "@/context/context"
 import { districtZones } from "@/components/board/const"
+import { usePropertyManager } from "@/hooks/property_manager/PropertyManager"
 
 const PropertyModal = () => {
   const {
@@ -8,6 +9,7 @@ const PropertyModal = () => {
     showPropertyModal,
     setShowPropertyModal,
   } = useMainContext()
+  const { buyProperty } = usePropertyManager()
 
   const player = allPlayers[currentPlayerPlaying]
   const currentZone = districtZones.find(
@@ -76,6 +78,9 @@ const PropertyModal = () => {
                   color: "#fff",
                   cursor: "pointer",
                   fontSize: "16px",
+                }}
+                onClick={() => {
+                  buyProperty()
                 }}
               >
                 Acheter

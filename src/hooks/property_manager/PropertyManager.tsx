@@ -1,3 +1,4 @@
+import sounds from "@/assets/sounds"
 import { districtZones } from "@/components/board/const"
 import { DistrictZone } from "@/components/board/types"
 import { useMainContext } from "@/context/context"
@@ -17,6 +18,7 @@ export const usePropertyManager = () => {
 
   const buyProperty = () => {
     if (player) {
+      sounds.money.play()
       const property = districtZones.find(
         (zone) => zone.id === player.boardPosition
       )
