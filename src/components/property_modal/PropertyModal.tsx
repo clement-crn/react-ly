@@ -37,23 +37,82 @@ const PropertyModal = () => {
         <div
           style={{
             backgroundColor: "white",
-            padding: "20px",
+            border: "2px solid #000",
             borderRadius: "8px",
+            padding: "20px",
+            width: "250px",
+            height: "400px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            position: "relative",
           }}
         >
-          {" "}
-          <button onClick={() => setShowPropertyModal(false)}>X</button>
-          {isPropertyOwned ? (
-            <p>Vous possédez cette propriété</p>
-          ) : (
-            <button>Acheter</button>
-          )}
-          {currentZone && (
-            <>
-              <p>{currentZone.name}</p>
-              <p>{currentZone.price}</p>
-            </>
-          )}
+          <div style={{ position: "absolute", top: "5px", right: "5px" }}>
+            <button
+              style={{
+                border: "none",
+                backgroundColor: "transparent",
+                cursor: "pointer",
+                fontSize: "20px",
+              }}
+              onClick={() => setShowPropertyModal(false)}
+            >
+              X
+            </button>
+          </div>
+          <div style={{ textAlign: "center" }}>
+            {isPropertyOwned ? (
+              <p style={{ fontSize: "18px", fontWeight: "bold" }}>
+                Vous possédez cette propriété
+              </p>
+            ) : (
+              <button
+                style={{
+                  padding: "10px 20px",
+                  border: "none",
+                  borderRadius: "4px",
+                  backgroundColor: "#007bff",
+                  color: "#fff",
+                  cursor: "pointer",
+                  fontSize: "16px",
+                }}
+              >
+                Acheter
+              </button>
+            )}
+            {currentZone && (
+              <>
+                <p
+                  style={{
+                    fontSize: "24px",
+                    fontWeight: "bold",
+                    marginTop: "20px",
+                    marginBottom: "10px",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {currentZone.name}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                    color: "#666",
+                    marginBottom: "20px",
+                  }}
+                >
+                  Prix : {currentZone.price}
+                </p>
+              </>
+            )}
+          </div>
+          <div
+            style={{
+              borderTop: "2px solid #000",
+              textAlign: "center",
+              paddingTop: "10px",
+            }}
+          ></div>
         </div>
       </div>
     )
