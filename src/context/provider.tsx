@@ -1,6 +1,5 @@
 import React, { useState, ReactNode, useMemo } from "react"
 import { MainContext, MainState } from "./context"
-import { DistrictZone } from "@/components/board/types"
 
 interface MainProviderProps {
   children: ReactNode
