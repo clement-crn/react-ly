@@ -4,6 +4,7 @@ import RightMenu from "@/components/right_menu/RightMenu"
 import { Board } from "@/components/board"
 import { IoArrowBack } from "react-icons/io5"
 import PropertyModal from "@/components/property_modal/PropertyModal"
+import DevPanel from "@/components/dev_panel/DevPanel"
 
 function Game() {
   const { setIsGameStarted, showPropertyModal } = useMainContext()
@@ -23,9 +24,9 @@ function Game() {
         </div>
         <div className={style.board_wrapper}>
           <Board />
-          {/* <div className={style.devPanel}>
+          <div className={style.devPanel}>
             <DevPanel />
-          </div> */}
+          </div>
         </div>
         {showPropertyModal && <PropertyModal />}
       </div>
