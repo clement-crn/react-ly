@@ -15,7 +15,13 @@ const PropertyModal = () => {
   const currentZone = districtZones.find(
     (zone) => zone.id === player?.boardPosition
   )
-
+  if (
+    player?.boardPosition === 10 ||
+    player?.boardPosition === 20 ||
+    player?.boardPosition === 30
+  ) {
+    return
+  }
   const isPropertyOwned = player?.propertiesOwned?.some(
     (property) => property.id === player.boardPosition
   )
