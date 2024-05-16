@@ -1,22 +1,38 @@
 import React from "react"
 import { useMainContext } from "@/context/context"
 const DevPanel = () => {
-  const { startingOrder, currentPlayerIndex, allPlayers } = useMainContext()
+  const { startingOrder, currentPlayerPlaying, allPlayers, setPlayer } =
+    useMainContext()
   // const context = useMainContext()
   // // console.log("Context:", JSON.stringify(context, null, 2))
-
+  const currentPlayer = allPlayers[currentPlayerPlaying]
+  const [position, setPosition] = React.useState<number>(0)
   const getCurrentPlayerUsername = () => {
-    const currentPlayer = allPlayers[currentPlayerIndex]
     return currentPlayer ? currentPlayer.username : "Unknown"
+  }
+  const movePlayerTo = (newPosition: number) => {
+    setPlayer(currentPlayerPlaying, {
+      ...currentPlayer,
+      boardPosition: newPosition,
+    })
   }
 
   return (
     <div>
-      <h3> ############################## dev panel ###############</h3>
       <div>
         Starting order: <span>{startingOrder}</span>
       </div>
       <div>Who is playing: {getCurrentPlayerUsername()}</div>
+
+      <div>
+        Move current player to
+        <input
+          type="number"
+          value={position}
+          onChange={(e) => setPosition(Number(e.target.value))}
+        />
+      </div>
+      <button onClick={() => movePlayerTo(position)}>Move</button>
     </div>
   )
 }
