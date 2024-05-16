@@ -41,6 +41,7 @@ export const useDiceController = () => {
       }
     } else {
       const newPosition = (randomNumber + player.boardPosition) % 40
+      const passedStart = randomNumber + player.boardPosition >= 40
 
       if (randomNumber < 5) {
         consecutiveLowRolls++
@@ -57,7 +58,11 @@ export const useDiceController = () => {
       }
 
       if (consecutiveLowRolls < 2) {
-        setPlayer(player.id, { ...player, boardPosition: newPosition })
+        setPlayer(player.id, {
+          ...player,
+          boardPosition: newPosition,
+          money: player.money + (passedStart ? 200 : 0),
+        })
       }
 
       if (newPosition === 30) {
