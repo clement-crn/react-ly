@@ -15,6 +15,7 @@ function MainButtons() {
     currentPlayerPlaying,
     allPlayers,
     setCurrentPlayerPlaying,
+    setShowPropertyModal,
   } = useMainContext()
   const { rollDicesMainGame } = useDiceController()
   const { sendPlayerToJail } = useJail()
@@ -41,6 +42,7 @@ function MainButtons() {
   }
 
   const endTurn = () => {
+    setShowPropertyModal(false)
     playSound(sounds.pop)
     const nextPlayerIndex = (currentPlayerPlaying + 1) % startingOrder.length
     if (allPlayers[nextPlayerIndex]?.isBankrupt) {
@@ -56,7 +58,9 @@ function MainButtons() {
   return (
     <div className={style.buttons_container}>
       <button onClick={() => startPlayerTurn()}>Lancer le dé</button>
-      <button onClick={() => endTurn()}>Terminer le tour</button>
+      <button style={{ zIndex: 999 }} onClick={() => endTurn()}>
+        Terminer le tour
+      </button>
       {/* DEV */}
       <button onClick={() => sendPlayerToJail()}>Prison</button>
       <button onClick={() => payTax()}>Taxe</button>
