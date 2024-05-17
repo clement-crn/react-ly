@@ -2,6 +2,7 @@ import style from "./Dices.module.css"
 import { useMainContext } from "@/context/context"
 
 import Result from "./Result"
+import sounds from "@/assets/sounds"
 const pairs: { a: number; b: number; sum: number }[] = []
 const StartingDices = () => {
   const {
@@ -16,6 +17,7 @@ const StartingDices = () => {
   } = useMainContext()
 
   const launchDices = () => {
+    sounds.dice.play()
     for (let i = 0; i < 4; i++) {
       let a = Math.floor(Math.random() * 6) + 1
       let b = Math.floor(Math.random() * 6) + 1
@@ -76,7 +78,10 @@ const StartingDices = () => {
                   <Result pairs={pairs} />
                   <div className={style.button_wrapper}>
                     <button
-                      onClick={() => setDicesStepFinished(true)}
+                      onClick={() => {
+                        setDicesStepFinished(true)
+                        sounds.soft.play()
+                      }}
                       className={style.play_button}
                     >
                       Jouer

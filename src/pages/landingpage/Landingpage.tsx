@@ -1,6 +1,7 @@
 import { SetStateAction, startTransition, useState } from "react"
 import style from "./landingpage.module.css"
 import { useMainContext } from "../../context/context"
+import sounds from "@/assets/sounds"
 
 function Landingpage() {
   const [inputValue, setInputValue] = useState("")
@@ -13,6 +14,7 @@ function Landingpage() {
   }
 
   const handleValidation = () => {
+    sounds.start.play()
     startTransition(() => {
       setPlayer(0, {
         ...humanPlayer,
