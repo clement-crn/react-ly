@@ -12,6 +12,7 @@ export type MainState = {
   startingOrder: number[]
   isDevMode: boolean
   showPropertyModal: boolean
+  zoneClickedFromBoard: number
 
   //joueurs
   allPlayers: Player[]
@@ -33,6 +34,7 @@ export type MainState = {
   setDevMode: React.Dispatch<React.SetStateAction<boolean>>
   setConsecutiveJailRolls: React.Dispatch<React.SetStateAction<number>>
   setShowPropertyModal: React.Dispatch<React.SetStateAction<boolean>>
+  setZoneClickedFromBoard: React.Dispatch<React.SetStateAction<number>>
 }
 
 const MainContext = createContext<MainState | undefined>(undefined)

@@ -15,6 +15,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   const [isDevMode, setDevMode] = useState<boolean>(false)
   const [consecutiveJailRolls, setConsecutiveJailRolls] = useState<number>(0)
   const [showPropertyModal, setShowPropertyModal] = useState<boolean>(false)
+  const [zoneClickedFromBoard, setZoneClickedFromBoard] = useState<number>(-1)
 
   const [bot2, setBot2] = useState<Player>({
     id: 1,
@@ -99,6 +100,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     isDevMode,
     consecutiveJailRolls,
     showPropertyModal,
+    zoneClickedFromBoard,
     setTheme,
     setIsGameStarted,
     setDicesStepFinished,
@@ -109,6 +111,7 @@ const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
     setDevMode,
     setConsecutiveJailRolls,
     setShowPropertyModal,
+    setZoneClickedFromBoard,
   }
 
   return (
