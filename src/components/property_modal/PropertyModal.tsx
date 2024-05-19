@@ -2,7 +2,11 @@ import { useMainContext } from "@/context/context"
 import { districtZones } from "@/components/board/const"
 import { usePropertyManager } from "@/hooks/property_manager/PropertyManager"
 
-const PropertyModal = () => {
+type PropertyModalProps = {
+  buyAllowed: boolean
+}
+
+const PropertyModal = ({ buyAllowed }: PropertyModalProps) => {
   const {
     allPlayers,
     currentPlayerPlaying,
@@ -68,7 +72,7 @@ const PropertyModal = () => {
             </button>
           </div>
           <div style={{ textAlign: "center" }}>
-            {isPropertyOwned ? (
+            {isPropertyOwned && buyAllowed ? (
               <p style={{ fontSize: "18px", fontWeight: "bold" }}>
                 Vous possédez cette propriété
               </p>
