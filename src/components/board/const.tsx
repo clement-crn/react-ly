@@ -57,7 +57,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 2,
-    name: "Impasse Fleurie",
+    name: "Coffre-fort",
     price: 100,
     coordinates: {
       top: "86.5%",
@@ -68,7 +68,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 3,
-    name: "Chemin Blanc",
+    name: "Impasse Fleurie",
     price: 100,
     coordinates: {
       top: "86.5%",
@@ -79,7 +79,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 4,
-    name: "Quai Branly",
+    name: "LE FISC",
     price: 100,
     coordinates: {
       top: "86.5%",
@@ -90,7 +90,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 5,
-    name: "Place Vendôme",
+    name: "Cyber Café",
     price: 100,
     coordinates: {
       top: "86.5%",
@@ -112,7 +112,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 7,
-    name: "Voie Lactée",
+    name: "CHANCE",
     price: 100,
     coordinates: {
       top: "86.5%",
@@ -123,7 +123,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 8,
-    name: "Promenade Plantée",
+    name: "Voie Lactée",
     price: 100,
     coordinates: {
       top: "86.5%",
@@ -146,7 +146,7 @@ export const districtZones: DistrictZone[] = [
 
   {
     id: 11,
-    name: "Parvis Notre-Dame",
+    name: "Rue Notre-Dame",
     price: 100,
     coordinates: {
       top: "78%",
@@ -190,7 +190,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 15,
-    name: "Impasse du Moulin",
+    name: "Cyber Café",
     price: 100,
     coordinates: {
       top: "45.5%",
@@ -212,7 +212,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 17,
-    name: "Place de la République",
+    name: "Coffre-fort",
     price: 100,
     coordinates: {
       top: "29.4%",
@@ -234,7 +234,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 19,
-    name: "Rue ",
+    name: "Rue Trucmuche",
     price: 100,
     coordinates: {
       top: "13%",
@@ -256,7 +256,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 22,
-    name: "Rue de la Ferme",
+    name: "CHANCE",
     price: 100,
     coordinates: {
       top: "0%",
@@ -289,7 +289,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 25,
-    name: "Rue de la Cavalerie",
+    name: "Cyber Café",
     price: 100,
     coordinates: {
       top: "0%",
@@ -300,7 +300,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 26,
-    name: "Rue de la Solidarité",
+    name: "Rue de la Cavalerie",
     price: 100,
     coordinates: {
       top: "0%",
@@ -311,7 +311,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 27,
-    name: "Rue de la Renaissance",
+    name: "Rue Wevan Consulting",
     price: 100,
     coordinates: {
       top: "0%",
@@ -322,7 +322,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 28,
-    name: "Rue de la Résistance",
+    name: "Escape Game",
     price: 100,
     coordinates: {
       top: "0%",
@@ -333,7 +333,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 29,
-    name: "Rue de la Victoire",
+    name: "MontQuest Games",
     price: 100,
     coordinates: {
       top: "0%",
@@ -366,7 +366,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 33,
-    name: "Rue Émile Combes",
+    name: "Coffre-fort",
     price: 100,
     coordinates: {
       top: "29.3%",
@@ -388,7 +388,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 35,
-    name: "Rue Émile Zola",
+    name: "Cyber Café",
     price: 100,
     coordinates: {
       top: "45.7%",
@@ -399,7 +399,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 36,
-    name: "Rue Jules Verne",
+    name: "Chance",
     price: 100,
     coordinates: {
       top: "54%",
@@ -421,7 +421,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 38,
-    name: "Rue Jean Racine",
+    name: "Le fisc :|",
     price: 100,
     coordinates: {
       top: "70%",
@@ -432,7 +432,7 @@ export const districtZones: DistrictZone[] = [
   },
   {
     id: 39,
-    name: "Rue Saint Vincent",
+    name: "Rue Andy Sensei",
     price: 100,
     coordinates: {
       top: "78%",
