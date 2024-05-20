@@ -6,13 +6,18 @@ import { useMainContext } from "@/context/context"
 import Pawn from "./pawn/Pawn"
 
 function Board() {
-  const { allPlayers, setZoneClickedFromBoard, setShowPropertyModal } =
-    useMainContext()
+  const {
+    allPlayers,
+
+    setZoneClickedFromBoard,
+    setShowPropertyModal,
+  } = useMainContext()
 
   const zoneManager = (id: number) => {
-    console.log(id, name)
-    setShowPropertyModal(true)
+    console.log(id)
     setZoneClickedFromBoard(id)
+    if (id === 10 || id === 20 || id === 30) return
+    setShowPropertyModal(true)
     console.log("zoneClickedFromBoard", id)
   }
 

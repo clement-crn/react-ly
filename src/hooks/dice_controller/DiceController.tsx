@@ -23,9 +23,7 @@ export const useDiceController = () => {
     handleProperty()
 
     if (player.isPrisoner) {
-      // Player is in jail
       if (randomNumber < 5) {
-        // Move player out of jail
         setPlayer(player.id, {
           ...player,
           isPrisoner: false,

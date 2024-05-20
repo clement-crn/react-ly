@@ -10,7 +10,12 @@ export const usePropertyManager = () => {
   const player = allPlayers[currentPlayerPlaying]
 
   const handleProperty = () => {
-    // check if player have the id of his boardPosition into the list of objects player.ownedProperties of type DistrictZone (so we can access the id of the property)
+    if (
+      player?.boardPosition === 10 ||
+      player?.boardPosition === 20 ||
+      player?.boardPosition === 30
+    )
+      return
     setShowPropertyModal(true)
     console.log(">>>>>>show property modal")
     console.log(">>>>>>handle property called")
