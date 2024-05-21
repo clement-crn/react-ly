@@ -28,12 +28,19 @@ const PropertyModal = () => {
     console.log("zonePickedFromBoardToShow", zonePickedFromBoardToShow)
   }, [zonePickedFromBoardToShow])
 
+  useEffect(() => {
+    console.log(
+      "zonePickedFromBoardToShow.name",
+      zonePickedFromBoardToShow?.name
+    )
+  }, [])
+
   if (
     player?.boardPosition === 10 ||
     player?.boardPosition === 20 ||
     player?.boardPosition === 30
   ) {
-    return
+    return null
   }
   const isPropertyOwned = player?.propertiesOwned?.some(
     (property) => property.id === player.boardPosition
@@ -90,29 +97,17 @@ const PropertyModal = () => {
                   Vous possédez cette propriété
                 </p>
               ) : null
-            ) : (
-              zonePickedFromBoardToShow?.id === undefined && (
-                <button
-                  style={{
-                    padding: "10px 20px",
-                    border: "none",
-                    borderRadius: "4px",
-                    backgroundColor: "#007bff",
-                    color: "#fff",
-                    cursor: "pointer",
-                    fontSize: "16px",
-                  }}
-                  onClick={() => {
-                    buyProperty()
-                  }}
-                >
-                  Acheter
-                </button>
-              )
-            )}
+            ) : null}
 
             {zonePickedFromBoardToShow?.id === undefined ? (
               <>
+                <div
+                  style={{
+                    width: "100%",
+                    backgroundColor: currentPlayerZone?.color,
+                    height: "50px",
+                  }}
+                ></div>
                 <p
                   style={{
                     fontSize: "24px",
@@ -137,6 +132,13 @@ const PropertyModal = () => {
             ) : (
               zonePickedFromBoardToShow && (
                 <>
+                  <div
+                    style={{
+                      width: "100%",
+                      backgroundColor: zonePickedFromBoardToShow?.color,
+                      height: "50px",
+                    }}
+                  ></div>
                   <p
                     style={{
                       fontSize: "24px",
@@ -161,11 +163,31 @@ const PropertyModal = () => {
               )
             )}
           </div>
+          {!isPropertyOwned && zonePickedFromBoardToShow?.id === undefined && (
+            <div style={{ textAlign: "center", marginTop: "auto" }}>
+              <button
+                style={{
+                  padding: "10px 20px",
+                  border: "none",
+                  borderRadius: "4px",
+                  backgroundColor: "#007bff",
+                  color: "#fff",
+                  cursor: "pointer",
+                  fontSize: "16px",
+                }}
+                onClick={() => {
+                  buyProperty()
+                }}
+              >
+                Acheter
+              </button>
+            </div>
+          )}
           <div
             style={{
               borderTop: "2px solid #000",
               textAlign: "center",
-              paddingTop: "10px",
+              marginTop: "20px",
             }}
           ></div>
         </div>
