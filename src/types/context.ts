@@ -1,4 +1,4 @@
-import { DistrictZone } from "@/components/board/types"
+import { CyberCafe, DistrictZone } from "@/components/board/types"
 
 declare global {
   type Player = {
@@ -10,7 +10,7 @@ declare global {
     boardPosition: number
     consecutiveJailRolls: number
     isBankrupt: boolean
-    propertiesOwned: DistrictZone[]
+    propertiesOwned: DistrictZone[] | CyberCafe[]
   }
 }
 export type module = unknown
