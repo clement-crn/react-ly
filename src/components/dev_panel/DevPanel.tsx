@@ -16,6 +16,7 @@ const DevPanel = () => {
       boardPosition: newPosition,
     })
   }
+  const player = allPlayers[currentPlayerPlaying]
 
   return (
     <div>
@@ -23,6 +24,15 @@ const DevPanel = () => {
         Starting order: <span>{startingOrder}</span>
       </div>
       <div>Who is playing: {getCurrentPlayerUsername()}</div>
+      <div>
+        His properties:
+        <br />
+        {player?.propertiesOwned.map((prop, index) => (
+          <span key={index}>
+            -{prop.name} <br />
+          </span>
+        ))}
+      </div>
 
       <div>
         Move current player to
