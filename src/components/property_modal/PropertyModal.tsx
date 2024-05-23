@@ -1,5 +1,5 @@
 import { useMainContext } from "@/context/context"
-import { districtZones } from "@/components/board/const"
+import { chests, districtZones } from "@/components/board/const"
 import { usePropertyManager } from "@/hooks/property_manager/PropertyManager"
 import { useEffect } from "react"
 
@@ -22,6 +22,9 @@ const PropertyModal = () => {
   const zonePickedFromBoardToShow = districtZones.find(
     (zone) => zone.id === zoneClickedFromBoard
   )
+
+  const chestZone = chests.find((chest) => chest.id === player?.boardPosition)
+
   console.log("zonePickedFromBoard", zonePickedFromBoardToShow)
 
   useEffect(() => {
@@ -118,6 +121,7 @@ const PropertyModal = () => {
                   }}
                 >
                   {currentPlayerZone?.name}
+                  {chestZone?.name}
                 </p>
                 <p
                   style={{
@@ -126,7 +130,11 @@ const PropertyModal = () => {
                     marginBottom: "20px",
                   }}
                 >
-                  Prix : {currentPlayerZone?.price}
+                  {chestZone ? (
+                    <p>TODO:afficher l'event</p>
+                  ) : (
+                    <p> Prix : {currentPlayerZone?.price}</p>
+                  )}
                 </p>
               </>
             ) : (
@@ -157,7 +165,11 @@ const PropertyModal = () => {
                       marginBottom: "20px",
                     }}
                   >
-                    Prix : {zonePickedFromBoardToShow.price}
+                    {chestZone ? (
+                      <p>TODO:afficher l'event</p>
+                    ) : (
+                      <p> Prix : {zonePickedFromBoardToShow.price}</p>
+                    )}
                   </p>
                 </>
               )
