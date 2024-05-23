@@ -56,8 +56,8 @@ export const chests: Chest[] = [
     name: "Coffre-fort",
     coordinates: {
       top: "86.5%",
-      left: "98%",
-      width: "2%",
+      left: "99%",
+      width: "11%",
       height: "13%",
     },
   },
