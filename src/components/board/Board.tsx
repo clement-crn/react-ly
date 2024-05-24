@@ -1,7 +1,7 @@
 import React from "react"
 import style from "./Board.module.css"
 import { gameboard } from "@/assets"
-import { chests, cornerZone, districtZones } from "./const"
+import { chests, cornerZone, cyberCafes, districtZones } from "./const"
 import { useMainContext } from "@/context/context"
 import Pawn from "./pawn/Pawn"
 
@@ -86,6 +86,44 @@ function Board() {
           </div>
         ))}
         {chests.map((zone, index) => (
+          <div
+            key={zone.id}
+            className={style.clickableZone}
+            style={{
+              top: zone.coordinates.top,
+              left: zone.coordinates.left,
+              width: zone.coordinates.width,
+              height: zone.coordinates.height,
+              backgroundColor: `hsla(${
+                index * (360 / districtZones.length)
+              }, 100%, 50%, 0.2)`,
+            }}
+            onClick={() => {
+              zoneManager(zone.id)
+            }}
+          >
+            {/* Render pawns for all players in the current zone */}
+            {allPlayers &&
+              Object.values(allPlayers).map(
+                (player) =>
+                  player.boardPosition === zone.id && (
+                    <div
+                      key={player.id}
+                      className={style.pawnContainer}
+                      style={{
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    >
+                      <Pawn playerId={player.id} text={player.username} />
+                    </div>
+                  )
+              )}
+          </div>
+        ))}
+
+        {cyberCafes.map((zone, index) => (
           <div
             key={zone.id}
             className={style.clickableZone}
