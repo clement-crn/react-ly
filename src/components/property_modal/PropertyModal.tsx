@@ -2,6 +2,7 @@ import { useMainContext } from "@/context/context"
 import { chests, districtZones } from "@/components/board/const"
 import { usePropertyManager } from "@/hooks/property_manager/PropertyManager"
 import { useEffect } from "react"
+import { luckCards } from "@/assets/cards/luck/consts"
 
 const PropertyModal = () => {
   const {
@@ -24,6 +25,8 @@ const PropertyModal = () => {
   )
 
   const chestZone = chests.find((chest) => chest.id === player?.boardPosition)
+
+  const luck = luckCards.find((chest) => chest.id === player?.boardPosition)
 
   console.log("zonePickedFromBoard", zonePickedFromBoardToShow)
 
@@ -130,7 +133,7 @@ const PropertyModal = () => {
                     marginBottom: "20px",
                   }}
                 >
-                  {chestZone ? (
+                  {chestZone || luck ? (
                     <p>TODO:afficher l'event</p>
                   ) : (
                     <p> Prix : {currentPlayerZone?.price}</p>
