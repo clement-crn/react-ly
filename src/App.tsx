@@ -6,6 +6,7 @@ import { Loading } from "./utils"
 import { StartingDices } from "./pages/dices"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import Test from "./components/test"
 
 function App() {
   const { isGameStarted, dicesStepFinished } = useMainContext()
@@ -15,7 +16,7 @@ function App() {
       <Suspense fallback={<Loading />}>
         <div>
           {!isGameStarted ? (
-            <Landingpage />
+            <Test />
           ) : dicesStepFinished ? (
             <Game />
           ) : (
