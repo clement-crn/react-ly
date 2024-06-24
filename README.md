@@ -26,6 +26,13 @@ If you are developing a production application, we recommend updating the config
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
-  money Sound Effect by u_byub5wd934 from Pixabay
-  Sound Effect Start from Pixabay
-  soft Sound Effect by floraphonic Pixabay
+CREDITS
+money Sound Effect by u_byub5wd934 from Pixabay
+Sound Effect Start from Pixabay
+soft Sound Effect by floraphonic Pixabay
+
+NEXT FEATURES:
+-register/login
+-manage games in django (only the admin can create new games)
+-join games in front-end
+-AI driven players
