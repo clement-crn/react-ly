@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { loginUser } from "../../../api/api"
+import style from "./Login.module.css"
 
 const Login = () => {
   const [username, setUsername] = useState("")
@@ -24,10 +25,11 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleLogin}>
+    <div className={style.container}>
+      <form className={style.form} onSubmit={handleLogin}>
         <input
           type="text"
+          className={style.input}
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
@@ -35,15 +37,24 @@ const Login = () => {
         />
         <input
           type="password"
+          className={style.input}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           required
         />
-        <button type="submit">Login</button>
+        <button type="submit" className={style.button}>
+          Login
+        </button>
       </form>
-      {error && <div style={{ color: "red" }}>{error}</div>}
-      {success && <div style={{ color: "green" }}>Login successful!</div>}
+      {error && (
+        <div className={`${style.message} ${style.error}`}>{error}</div>
+      )}
+      {success && (
+        <div className={`${style.message} ${style.success}`}>
+          Login successful!
+        </div>
+      )}
     </div>
   )
 }
