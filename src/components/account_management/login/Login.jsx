@@ -1,38 +1,19 @@
-import axios from "axios"
 import { useState } from "react"
-import { useMainContext } from "../../../context/context"
+import { useAuth } from "@/context/auth/useAuth" // Adjusted import path based on your project structure
+
 const Login = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-  const { setIsGameStarted, isGameStarted } = useMainContext()
+  const { loginUser } = useAuth() // Use the loginUser function from the AuthContext
+
   const submit = async (e) => {
     e.preventDefault()
 
-    const user = {
-      username: username,
-      password: password,
-    }
-
     try {
-      const { data } = await axios.post(
-        "http://localhost:8000/api/token/",
-        user,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      )
-      localStorage.setItem("access_token", data.access)
-      localStorage.setItem("refresh_token", data.refresh)
-
-      // Set authorization header for subsequent requests
-      axios.defaults.headers.common["Authorization"] = `Bearer ${data.access}`
+      await loginUser(username, password) // Call the loginUser function with the provided credentials
     } catch (error) {
       console.error("Login failed:", error)
     }
-    setIsGameStarted(true)
   }
 
   return (
@@ -45,7 +26,6 @@ const Login = () => {
             <input
               className="form-control mt-1"
               placeholder="Enter Username"
-              name="username"
               type="text"
               value={username}
               required
@@ -55,7 +35,6 @@ const Login = () => {
           <div className="form-group mt-3">
             <label>Password</label>
             <input
-              name="password"
               type="password"
               className="form-control mt-1"
               placeholder="Enter password"
@@ -69,7 +48,6 @@ const Login = () => {
               Submit
             </button>
           </div>
-          {isGameStarted && <div> Game started </div>}
         </div>
       </form>
     </div>
