@@ -5,12 +5,15 @@ import { Board } from "@/components/board"
 import { IoArrowBack } from "react-icons/io5"
 import PropertyModal from "@/components/property_modal/PropertyModal"
 import DevPanel from "@/components/dev_panel/DevPanel"
+import { useAuth } from "@/context/auth/useAuth"
 
 function Game() {
   const { setIsGameStarted, showPropertyModal } = useMainContext()
+  const { logoutUser } = useAuth()
 
   const back = () => {
     setIsGameStarted(false)
+    logoutUser()
   }
 
   return (
