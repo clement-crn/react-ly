@@ -4,15 +4,22 @@ import axios from "axios"
 const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
-  const [authTokens, setAuthTokens] = useState(() =>
-    localStorage.getItem("authTokens")
-      ? JSON.parse(localStorage.getItem("authTokens"))
-      : null
-  )
+  const [authTokens, setAuthTokens] = useState(() => {
+    try {
+      const storedTokens = localStorage.getItem("authTokens")
+      return storedTokens ? JSON.parse(storedTokens) : null
+    } catch (error) {
+      console.error("Error parsing authTokens from localStorage:", error)
+      return null // or handle gracefully as per your application's logic
+    }
+  })
 
   const loginUser = async (username, password) => {
     try {
-      const response = await axios.post("/api/token/", { username, password })
+      const response = await axios.post("http://localhost:8000/api/token/", {
+        username,
+        password,
+      })
       setAuthTokens(response.data)
       localStorage.setItem("authTokens", JSON.stringify(response.data))
       axios.defaults.headers.common[
