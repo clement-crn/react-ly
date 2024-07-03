@@ -45,3 +45,5 @@ Use HTTPS: To protect JWTs from being intercepted during transmission, always us
 Use appropriate algorithms: To protect your web application, make sure that you choose a suitable signing algorithm for your JWTs. Asymmetric algorithms (like RSA or ECDSA) are generally considered the best, as they use a public/private key pair, making it difficult for an attacker to forge tokens.
 
 Handle token revocation: You should always assign a short expiration time for JWTs to minimize the risk of token theft or misuse. Many libraries will implement a mechanism for token revocation to address situations where a user's access must be immediately revoked, such as account deletion or security breaches.
+
+test
